@@ -108,13 +108,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileType: 0
+  direction: 0
+  tileTexture: 0
+  occupant: {fileID: 0}
   storedCard: {fileID: 0}
-  spawnPos: {fileID: 7957334316665033880}
-  empty: {fileID: 2100000, guid: 7c3b16618183f314698f122cc46de732, type: 2}
+  nextTile: {fileID: 0}
+  grass: {fileID: 2100000, guid: 7c3b16618183f314698f122cc46de732, type: 2}
   path: {fileID: 2100000, guid: f59010246bca28343b2836c2f4eddb88, type: 2}
-  rock: {fileID: 2100000, guid: 9090d544ab1538a4ab067eebd51ecb32, type: 2}
   trees: {fileID: 2100000, guid: c7b22a7796ea88741a8704d7588ee6ca, type: 2}
-  water: {fileID: 2100000, guid: a93ac69017bf1344e836f11a8ad7583c, type: 2}
 --- !u!1 &8276011202529640179
 GameObject:
   m_ObjectHideFlags: 0

@@ -75,8 +75,10 @@ public class TileSelector : MonoBehaviour
     //Returns true if the selected card can be placed on the selected tile
     private bool validTilePlacement(Tile selectedTile, Card selectedCard)
     {
+        //NEEDS TO CHECK IF SOMETHING HAS ALREADY BEEN SPAWNED ON THE SELECTED TILE
+
         //Tile = Empty && Card = Building
-        if (selectedTile.tileType == tileEnum.Locked && selectedCard.cardType == CardType.Building)
+        if (selectedTile.tileType == tileEnum.Building && selectedCard.cardType == CardType.Building)
         {
             return true;
         }
