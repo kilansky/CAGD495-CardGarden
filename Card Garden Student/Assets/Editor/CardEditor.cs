@@ -12,11 +12,11 @@ public class CardEditor : Editor
 
         Card card = (Card)target;
 
-        if (card.cardType == Card.CardType.building)
+        if (card.cardType == CardType.building)
         {
             card.buildingRange = EditorGUILayout.FloatField("Building Range", card.buildingRange);
         }
-        else if (card.cardType == Card.CardType.minion)
+        else if (card.cardType == CardType.minion)
         {
             card.minionHealth = EditorGUILayout.FloatField("Minion Health", card.minionHealth);
         }

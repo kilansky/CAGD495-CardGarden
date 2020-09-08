@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CardType { building, minion };
+
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
 public class Card : ScriptableObject
 {
-    public enum CardType {building, minion};
     public CardType cardType;
+
+    public GameObject thingToSpawn;
 
     public new string name;
     [TextArea] public string description;

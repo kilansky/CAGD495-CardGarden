@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TileType { empty, path, rock, trees, water };
+
 public class Tile : MonoBehaviour
-{
-    public enum TileType { empty, rock, trees, water };
+{   
     public TileType tileType;
 
+    public Card storedCard;
     public Transform spawnPos;
 
     public Material empty;
+    public Material path;
     public Material rock;
     public Material trees;
-    public Material water;
-
-    private Card storedCard;
+    public Material water;  
 
     // Start is called before the first frame update
     void Start()
