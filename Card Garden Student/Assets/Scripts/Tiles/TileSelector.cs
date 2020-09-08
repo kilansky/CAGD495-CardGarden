@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TileSelector : MonoBehaviour
-{    
+{
+    public float tileSpawnOffset = 1f;
     public RectTransform HandZone;
     public Material highlightMat;
 
@@ -68,19 +69,19 @@ public class TileSelector : MonoBehaviour
         CardManager.Instance.DiscardCard();
 
         //Spawn the object stored on the selected card
-        Instantiate(cardData.thingToSpawn, hitObject.GetComponent<Tile>().spawnPos.position, Quaternion.identity);
+        Instantiate(cardData.thingToSpawn, hitObject.transform.position + new Vector3(0, tileSpawnOffset,0), Quaternion.identity);
     }
 
     //Returns true if the selected card can be placed on the selected tile
     private bool validTilePlacement(Tile selectedTile, Card selectedCard)
     {
         //Tile = Empty && Card = Building
-        if (selectedTile.tileType == TileType.empty && selectedCard.cardType == CardType.building)
+        if (selectedTile.tileType == tileEnum.Locked && selectedCard.cardType == CardType.Building)
         {
             return true;
         }
         //Tile = Path && Card = Minion
-        else if (selectedTile.tileType == TileType.path && selectedCard.cardType == CardType.minion)
+        else if (selectedTile.tileType == tileEnum.Lane && selectedCard.cardType == CardType.Minion)
         {
             return true;
         }

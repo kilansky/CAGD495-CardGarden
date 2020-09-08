@@ -9,14 +9,17 @@ using UnityEngine;
 /**
 * @brief This class controls a tiles behavior in the grid.
 **/
+
+public enum tileEnum
+{
+    Locked,
+    Lane,
+    Building
+}
+
 public class Tile : MonoBehaviour
 {
-    public enum tileEnum
-	{
-		Null,
-		Lane,
-		Building
-	}	
+
 	public enum directionEnum
 	{
 		Zup,
@@ -39,7 +42,8 @@ public class Tile : MonoBehaviour
 	
 	public GameObject occupant;
 
-    private Card storedCard;
+    [HideInInspector]
+    public Card storedCard;
 	public Tile nextTile;
 	
 	/**

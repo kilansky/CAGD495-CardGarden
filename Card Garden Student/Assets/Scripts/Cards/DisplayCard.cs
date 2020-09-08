@@ -35,12 +35,12 @@ public class DisplayCard : MonoBehaviour
         minionHealthText.text = card.minionHealth.ToString();
 
         //Check the type of card in order to display more specific information
-        if (card.cardType == CardType.building)
+        if (card.cardType == CardType.Building)
         {
             minionHealthText.text = null;
             gameObject.GetComponent<Image>().sprite = buildingCard;
         }
-        else if (card.cardType == CardType.minion)
+        else if (card.cardType == CardType.Minion)
         {
             buildingRangeText.text = null;
             gameObject.GetComponent<Image>().sprite = minionCard;
