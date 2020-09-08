@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62e5bbc13b890e44a25f906f2fb1c15, type: 3}
+  m_Name: TestCard4
+  m_EditorClassIdentifier: 
+  cardType: 0
+  name: Generator
+  description: A building that generates gold
+  cost: 20
+  artwork: {fileID: 21300000, guid: 71ec9dd2e1a8949479be6de06bd5f895, type: 3}
+  attackPower: 0
+  attackSpeed: 5
+  buildingRange: 0
+  minionHealth: 10

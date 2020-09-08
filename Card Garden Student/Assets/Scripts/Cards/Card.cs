@@ -9,17 +9,12 @@ public class Card : ScriptableObject
     public CardType cardType;
 
     public new string name;
-
-    public int cost;
-
+    [TextArea] public string description;
+    [Range(0, 99)] public int cost;
+    public Sprite artwork;
+  
     public float attackPower;
-
+    public float attackSpeed;
     [HideInInspector] public float buildingRange;
     [HideInInspector] public float minionHealth;
-
-
-    void Start()
-    {
-
-    }
 }

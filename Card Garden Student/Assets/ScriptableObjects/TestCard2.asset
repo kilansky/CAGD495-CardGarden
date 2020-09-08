@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardType: 1
   name: Wizard
+  description: You shall not pass
   cost: 15
+  artwork: {fileID: 21300000, guid: e28594755fe5d584abac3f76cff1d0cb, type: 3}
   attackPower: 10
+  attackSpeed: 5
   buildingRange: 5
-  minionHealth: 100
+  minionHealth: 120

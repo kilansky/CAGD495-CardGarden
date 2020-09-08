@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62e5bbc13b890e44a25f906f2fb1c15, type: 3}
   m_Name: TestCard1
   m_EditorClassIdentifier: 
-  cardType: 1
+  cardType: 0
   name: Big Tower
+  description: A building that shoots enemies
   cost: 20
+  artwork: {fileID: 21300000, guid: 20fb97ff4488d3241a4fe464685e571d, type: 3}
   attackPower: 15
-  buildingRange: 5
-  minionHealth: 500
+  attackSpeed: 10
+  buildingRange: 25
+  minionHealth: 10
