@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CardManager : SingletonPattern<CardManager>
 {
@@ -10,6 +11,8 @@ public class CardManager : SingletonPattern<CardManager>
     public GameObject handZone;
     public Transform deckHolder;
     public Transform discardHolder;
+    public TextMeshProUGUI deckQuantityText;
+    public TextMeshProUGUI discardQuantityText;
 
     [Header("Cards & Deck Setup")]
     public int maxHandSize = 5;
@@ -47,6 +50,9 @@ public class CardManager : SingletonPattern<CardManager>
                 newCard.transform.SetParent(deckHolder);
                 newCard.SetActive(false);
                 deck.Add(newCard);
+
+                //Update the deck and discard pile quantities text
+                UpdateCardText();
             }
         }
     }
@@ -75,6 +81,9 @@ public class CardManager : SingletonPattern<CardManager>
             hand.Add(drawnCard);
             drawnCard.transform.SetParent(handZone.transform);
             drawnCard.SetActive(true);
+
+            //Update the deck and discard pile quantities text
+            UpdateCardText();
         }
         else
         {
@@ -102,10 +111,19 @@ public class CardManager : SingletonPattern<CardManager>
 
             //Set the card selected value to null
             CardSelector.cardSelected = null;
+
+            //Update the deck and discard pile quantities text
+            UpdateCardText();
         }
         else
         {
             Debug.Log("Failed to discard a card because no card was selected");
         }
+    }
+
+    private void UpdateCardText()
+    {
+        deckQuantityText.text = deck.Count.ToString();
+        discardQuantityText.text = discard.Count.ToString();
     }
 }

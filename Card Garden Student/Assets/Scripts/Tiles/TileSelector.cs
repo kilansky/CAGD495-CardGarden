@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TileSelector : MonoBehaviour
-{
-    public Material testMat;
+{    
+    public RectTransform HandZone;
+    public Material highlightMat;
 
     private Material objectMat;
     private GameObject hitObject;
@@ -22,8 +23,8 @@ public class TileSelector : MonoBehaviour
         Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
 
-        //Shoot a raycast at the mouse position
-        if (Physics.Raycast(mouseRay, out hitInfo))
+        //Check if the mouse is above the Hand Zone & Shoot a raycast at the mouse position
+        if (Input.mousePosition.y > HandZone.rect.height && Physics.Raycast(mouseRay, out hitInfo))
         {
             //Debug.Log("Ray Hit");
 
@@ -35,7 +36,7 @@ public class TileSelector : MonoBehaviour
                 objectMat = hitObject.GetComponent<Renderer>().material;
 
                 //Change the material of the hit tile
-                hitObject.GetComponent<Renderer>().material = testMat;
+                hitObject.GetComponent<Renderer>().material = highlightMat;
 
                 //Check if the mouse is left clicked & there is a card selected currently
                 if (Input.GetMouseButtonDown(0) && CardSelector.cardSelected)
