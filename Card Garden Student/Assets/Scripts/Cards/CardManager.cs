@@ -3,26 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CardManager : SingletonPattern<CardManager>
+[System.Serializable]
+public class ObjectReferences
 {
-    [Header("Object References")]
     public GameObject emptyCard;
-    public GameObject canvas;
-    public GameObject handZone;
+    public Transform handZone;
     public Transform deckHolder;
     public Transform discardHolder;
     public TextMeshProUGUI deckQuantityText;
     public TextMeshProUGUI discardQuantityText;
+}
 
-    [Header("Cards & Deck Setup")]
+public class CardManager : SingletonPattern<CardManager>
+{
+    //[Header("Object References")]
+    public ObjectReferences objectReferences;
+
+    //[Header("Cards & Deck Setup")]
     public int maxHandSize = 5;
-    public DeckQuantity[] cards;
     public bool drawHandOnStart;
-
-    [Header("LOOK DON'T TOUCH")]
-    public List<GameObject> deck = new List<GameObject>();
-    public List<GameObject> hand = new List<GameObject>();
-    public List<GameObject> discard = new List<GameObject>();
+    public DeckQuantity[] cards;
+    
+    private List<GameObject> deck = new List<GameObject>();
+    private List<GameObject> hand = new List<GameObject>();
+    private List<GameObject> discard = new List<GameObject>();
 
     private void Start()
     {
@@ -42,12 +46,11 @@ public class CardManager : SingletonPattern<CardManager>
             for (int i = 0; i < deckCard.amtInDeck; i++)
             {
                 //Assign new card values
-                GameObject newCard = Instantiate(emptyCard, Vector3.zero, Quaternion.identity, canvas.transform);
+                GameObject newCard = Instantiate(objectReferences.emptyCard, Vector3.zero, Quaternion.identity, objectReferences.deckHolder);
                 newCard.GetComponent<DisplayCard>().card = deckCard.cardType;
                 newCard.name = deckCard.cardType.name;
 
                 //Disable the new card and add it to the deck
-                newCard.transform.SetParent(deckHolder);
                 newCard.SetActive(false);
                 deck.Add(newCard);
 
@@ -79,7 +82,7 @@ public class CardManager : SingletonPattern<CardManager>
             GameObject drawnCard = deck[randCard];
             deck.Remove(drawnCard);
             hand.Add(drawnCard);
-            drawnCard.transform.SetParent(handZone.transform);
+            drawnCard.transform.SetParent(objectReferences.handZone.transform);
             drawnCard.SetActive(true);
 
             //Update the deck and discard pile quantities text
@@ -106,7 +109,7 @@ public class CardManager : SingletonPattern<CardManager>
             discard.Add(discardCard);
 
             //Disable card
-            discardCard.transform.SetParent(discardHolder);
+            discardCard.transform.SetParent(objectReferences.discardHolder);
             discardCard.SetActive(false);
 
             //Set the card selected value to null
@@ -123,7 +126,7 @@ public class CardManager : SingletonPattern<CardManager>
 
     private void UpdateCardText()
     {
-        deckQuantityText.text = deck.Count.ToString();
-        discardQuantityText.text = discard.Count.ToString();
+        objectReferences.deckQuantityText.text = deck.Count.ToString();
+        objectReferences.discardQuantityText.text = discard.Count.ToString();
     }
 }
