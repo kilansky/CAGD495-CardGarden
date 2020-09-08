@@ -63,31 +63,34 @@ public class TileSelector : MonoBehaviour
     private void PlaySelectedCard(Card cardData)
     {
         //Store the data from the selected card on this tile
-        hitObject.GetComponent<Tile>().storedCard = cardData;
+        hitObject.GetComponent<Tile>().storedCard = cardData;       
 
         //Discard the selected card
         CardManager.Instance.DiscardCard();
 
         //Spawn the object stored on the selected card
-        Instantiate(cardData.thingToSpawn, hitObject.transform.position + new Vector3(0, tileSpawnOffset,0), Quaternion.identity);
+        GameObject newSpawn = Instantiate(cardData.thingToSpawn, hitObject.transform.position + new Vector3(0, tileSpawnOffset,0), Quaternion.identity);
+        hitObject.GetComponent<Tile>().occupant = newSpawn;
     }
 
     //Returns true if the selected card can be placed on the selected tile
     private bool validTilePlacement(Tile selectedTile, Card selectedCard)
     {
-        //NEEDS TO CHECK IF SOMETHING HAS ALREADY BEEN SPAWNED ON THE SELECTED TILE
+        //Checks if tile is occupied
+        if(!hitObject.GetComponent<Tile>().occupant)
+        {
+            //Tile = Empty && Card = Building
+            if (selectedTile.tileType == tileEnum.Building && selectedCard.cardType == CardType.Building)
+            {
+                return true;
+            }
+            //Tile = Path && Card = Minion
+            else if (selectedTile.tileType == tileEnum.Lane && selectedCard.cardType == CardType.Minion)
+            {
+                return true;
+            }
+        }
 
-        //Tile = Empty && Card = Building
-        if (selectedTile.tileType == tileEnum.Building && selectedCard.cardType == CardType.Building)
-        {
-            return true;
-        }
-        //Tile = Path && Card = Minion
-        else if (selectedTile.tileType == tileEnum.Lane && selectedCard.cardType == CardType.Minion)
-        {
-            return true;
-        }
-        else
-            return false;
+        return false;
     }
 }
