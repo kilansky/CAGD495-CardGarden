@@ -1,0 +1,41 @@
+ManifestFileVersion: 0
+CRC: 914437403
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8f4c50e5e3b78d9c2d0eb63681955744
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 89211e5d417d50d2134394780ec49609
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6522d1c331d04774eaee2b35a9a8bfd6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 91501cdfc60969448a057e5d886b70f3, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/TestArcher.prefab
+- Assets/Prefabs/TestWizard.prefab
+- Assets/Prefabs/TestGenerator.prefab
+- Assets/Prefabs/TestTower.prefab
+- Assets/Prefabs/Tile.prefab
+- Assets/Prefabs/TileSpawner.prefab
+Dependencies: []
