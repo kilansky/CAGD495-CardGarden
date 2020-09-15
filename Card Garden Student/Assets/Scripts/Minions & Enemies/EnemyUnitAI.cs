@@ -98,7 +98,7 @@ public class EnemyUnitAI : MonoBehaviour
         foreach (var hitCollider in hitColliders)
         {
             Damageable d = hitCollider.GetComponent<Damageable>();
-            if (d != null && d.gameObject != gameObject)
+            if (d != null && d.gameObject != gameObject && !d.gameObject.CompareTag("Enemy"))
                 damageables.Add(d.gameObject);
         }
 

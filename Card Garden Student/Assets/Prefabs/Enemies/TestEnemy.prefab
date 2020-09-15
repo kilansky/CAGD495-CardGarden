@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6603262303014226103}
   m_Layer: 0
   m_Name: TestEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,14 +109,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93edcae6423c3aa42880e7d491ce88e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 02000000
-  armor: 02000000
+  maxHealth: 0200000004000000
+  armor: 0200000004000000
   damage: 02000000
   attackRadius: 02000000
   attackSpeed:
   - 2
   movementSpeed:
-  - 3
+  - 2
   goldDropped: 10
   enemyClass: Archer
   affix: 
@@ -158,7 +158,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

@@ -38,18 +38,10 @@ public class TileSelector : MonoBehaviour
                 //Highlight the tile visually
                 HighlightTile();
 
-                //Check if the mouse is left clicked & there is a card selected currently
-                if (Input.GetMouseButtonDown(0) && CardSelector.cardSelected)
+                //Check if the mouse is left clicked
+                if (Input.GetMouseButtonDown(0))
                 {
-                    //Get the data for the currently selected tile and card
-                    Card selectedCard = CardSelector.cardSelected.GetComponent<DisplayCard>().card;
-                    Tile selectedTile = hitTile.GetComponent<Tile>();
-
-                    //Attempt to play the selected card
-                    if (validTilePlacement(selectedTile, selectedCard))
-                        PlaySelectedCard(selectedCard);
-                    else
-                        Debug.Log("Unable to place the selected card on this tile");
+                    PlaySelectedCard();
                 }
             }
         }
@@ -76,37 +68,59 @@ public class TileSelector : MonoBehaviour
     }
 
 
-    private void PlaySelectedCard(Card cardData)
+    private void PlaySelectedCard()
     {
-        //Store the data from the selected card on this tile
-        hitTile.GetComponent<Tile>().storedCard = cardData;       
+        //Get the data for the currently selected tile and card
+        Tile selectedTile = hitTile.GetComponent<Tile>();
+        Card cardToPlay = CardSelector.cardSelected.GetComponent<DisplayCard>().card;
 
-        //Discard the selected card
-        CardManager.Instance.DiscardCard();
+        //Attempt to play the selected card
+        if (validTilePlacement(selectedTile, cardToPlay))
+        {
+            //Store the data from the selected card on this tile
+            selectedTile.storedCard = cardToPlay;
 
-        //Spawn the object stored on the selected card
-        GameObject newSpawn = Instantiate(cardData.thingToSpawn, hitTile.transform.position + new Vector3(0, tileSpawnOffset,0), Quaternion.identity);
-        hitTile.GetComponent<Tile>().occupant = newSpawn;
+            //Discard the selected card
+            CardManager.Instance.DiscardCard();
+
+            //Spawn the object stored on the selected card
+            GameObject newSpawn = Instantiate(cardToPlay.thingToSpawn, hitTile.transform.position + new Vector3(0, tileSpawnOffset, 0), Quaternion.identity);
+            selectedTile.occupant = newSpawn;
+
+            //Reduce player gold amount
+            PlayerStats.Instance.playerGold -= cardToPlay.cost;
+        }
     }
 
 
     //Returns true if the selected card can be placed on the selected tile
     private bool validTilePlacement(Tile selectedTile, Card selectedCard)
     {
-        //Checks if tile is occupied
-        if(!hitTile.GetComponent<Tile>().occupant)
+        int playerGold = (int)PlayerStats.Instance.playerGold;
+
+        //Checks if tile is not occupied and the player has enough gold to pay for the card
+        if (!selectedTile.occupant)
         {
-            //Tile = Empty && Card = Building
-            if (selectedTile.tileType == tileEnum.Building && selectedCard.cardType == CardType.Building)
+            if(playerGold >= selectedCard.cost)
             {
-                return true;
+                //Tile = Empty && Card = Building
+                if (selectedTile.tileType == tileEnum.Building && selectedCard.cardType == CardType.Building)
+                {
+                    return true;
+                }
+                //Tile = Path && Card = Minion
+                else if (selectedTile.tileType == tileEnum.Lane && selectedCard.cardType == CardType.Minion)
+                {
+                    return true;
+                }
+                else
+                    Debug.Log("This type of card cannot be played on this tile");
             }
-            //Tile = Path && Card = Minion
-            else if (selectedTile.tileType == tileEnum.Lane && selectedCard.cardType == CardType.Minion)
-            {
-                return true;
-            }
+            else
+                Debug.Log("Not enough gold to play this card");
         }
+        else
+            Debug.Log("This tile is occupied, cannot build here");
 
         return false;
     }

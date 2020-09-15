@@ -46,11 +46,12 @@ public class Tile : MonoBehaviour
     public Card storedCard;
 	public Tile nextTile;
 
-    public Material grass;
-    public Material path;
-    public Material trees;
+    //public Material grass;
+    //public Material path;
+    //public Material trees;
 
     //TEST TO SET MATERIALS ON TILES AT START - CHANGE LATER!
+    /*
     void Start()
     {
         if (tileType == tileEnum.Locked)
@@ -66,6 +67,7 @@ public class Tile : MonoBehaviour
             gameObject.GetComponent<Renderer>().material = grass;
         }
     }
+    */
 
     /**
 	* @brief instantiates a building on top of the tile based on the card played

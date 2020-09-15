@@ -25,10 +25,9 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        timer = Mathf.Clamp(timer - Time.deltaTime, 0, timeBetweenSpawns); 
-        if (timer == 0 && enemiesToSpawn.Count > 0 && tile.occupant == null)
+        timer = Mathf.Clamp(timer - Time.deltaTime, 0, timeBetweenSpawns);
+        if (timer == 0 && enemiesToSpawn.Count > 0)
         {
-            tile.occupant = enemiesToSpawn[0];
             Instantiate(enemiesToSpawn[0], spawnPosition, Quaternion.identity);
             enemiesToSpawn.RemoveAt(0);
             timer = timeBetweenSpawns;
