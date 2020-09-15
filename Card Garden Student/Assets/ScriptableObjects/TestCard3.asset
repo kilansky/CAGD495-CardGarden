@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: TestCard3
   m_EditorClassIdentifier: 
   cardType: 1
-  thingToSpawn: {fileID: 1759942344089282827, guid: f1779d92c101c3b428ef20389e8d2bf8,
+  thingToSpawn: {fileID: 1759942344089282827, guid: 561e6038f68a28a408410a963ac12bb3,
     type: 3}
+  buildingInProgress: {fileID: 0}
+  timeToBuild: 0
   name: Archer
   description: Fires arrows at close range
-  cost: 25
   artwork: {fileID: 21300000, guid: 12fc63c3ae291bc40bbd00f8ea5d59d8, type: 3}
+  cost: 25
   attackPower: 5
   attackSpeed: 10
   buildingRange: 5

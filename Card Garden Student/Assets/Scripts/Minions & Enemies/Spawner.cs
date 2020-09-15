@@ -9,6 +9,7 @@ public class Spawner : MonoBehaviour
     public float timeBetweenSpawns;
     public Vector3 spawnerOffset; // to spawn a little above tile
 
+    private Tile tile;
     private Vector3 spawnPosition;
     private float timer;
 
@@ -16,6 +17,7 @@ public class Spawner : MonoBehaviour
     {
         timer = -1;
         spawnPosition = transform.position + spawnerOffset;
+        tile = gameObject.GetComponent<Tile>();
 
         // some function may call this whenever enemies should spawn
         BeginSpawning();
@@ -24,8 +26,9 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         timer = Mathf.Clamp(timer - Time.deltaTime, 0, timeBetweenSpawns); 
-        if (timer == 0 && enemiesToSpawn.Count > 0)
+        if (timer == 0 && enemiesToSpawn.Count > 0 && tile.occupant == null)
         {
+            tile.occupant = enemiesToSpawn[0];
             Instantiate(enemiesToSpawn[0], spawnPosition, Quaternion.identity);
             enemiesToSpawn.RemoveAt(0);
             timer = timeBetweenSpawns;

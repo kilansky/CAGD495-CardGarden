@@ -15,10 +15,13 @@ MonoBehaviour:
   cardType: 0
   thingToSpawn: {fileID: 6715765027364090968, guid: 4468e71c45cdfa2418529d551aa2a933,
     type: 3}
+  buildingInProgress: {fileID: 4237717890610954218, guid: f65c5e438cec55d4aa5d361328c3d69c,
+    type: 3}
+  timeToBuild: 6
   name: Generator
   description: A building that generates gold
-  cost: 20
   artwork: {fileID: 21300000, guid: 71ec9dd2e1a8949479be6de06bd5f895, type: 3}
+  cost: 20
   attackPower: 0
   attackSpeed: 5
   buildingRange: 0

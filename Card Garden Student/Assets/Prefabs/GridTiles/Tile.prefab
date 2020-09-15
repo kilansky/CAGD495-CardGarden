@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 210606702679941458}
   - component: {fileID: 2085147137597178406}
   - component: {fileID: 5354465661325182384}
+  - component: {fileID: 8680539561694115797}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -116,6 +117,22 @@ MonoBehaviour:
   grass: {fileID: 2100000, guid: 7c3b16618183f314698f122cc46de732, type: 2}
   path: {fileID: 2100000, guid: f59010246bca28343b2836c2f4eddb88, type: 2}
   trees: {fileID: 2100000, guid: c7b22a7796ea88741a8704d7588ee6ca, type: 2}
+--- !u!114 &8680539561694115797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369862671088911926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8276011202529640179
 GameObject:
   m_ObjectHideFlags: 0

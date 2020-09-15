@@ -14,6 +14,13 @@ public class ObjectReferences
     public TextMeshProUGUI discardQuantityText;
 }
 
+[System.Serializable]
+public class DeckQuantity
+{
+    public Card cardType;
+    public int amtInDeck;
+}
+
 public class CardManager : SingletonPattern<CardManager>
 {
     //[Header("Object References")]
@@ -21,11 +28,12 @@ public class CardManager : SingletonPattern<CardManager>
 
     //[Header("Cards & Deck Setup")]
     public int maxHandSize = 5;
+    public float timeToDraw = 5f;
     public bool drawHandOnStart;
     public DeckQuantity[] cards;
-    
+
     private List<GameObject> deck = new List<GameObject>();
-    private List<GameObject> hand = new List<GameObject>();
+    [HideInInspector] public List<GameObject> hand = new List<GameObject>();
     private List<GameObject> discard = new List<GameObject>();
 
     private void Start()
