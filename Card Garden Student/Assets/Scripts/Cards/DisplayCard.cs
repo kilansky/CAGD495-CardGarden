@@ -30,8 +30,8 @@ public class DisplayCard : MonoBehaviour
         costText.text = card.cost.ToString();
         
         attackPowerText.text = card.attackPower.ToString();
-        attackSpeedText.text = card.attackSpeed.ToString();
-        buildingRangeText.text = card.buildingRange.ToString();
+        attackSpeedText.text = card.attackRate.ToString();
+        buildingRangeText.text = card.attackRadius.ToString();
         minionHealthText.text = card.minionHealth.ToString();
 
         //Check the type of card in order to display more specific information

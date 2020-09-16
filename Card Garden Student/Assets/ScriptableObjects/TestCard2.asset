@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62e5bbc13b890e44a25f906f2fb1c15, type: 3}
   m_Name: TestCard2
   m_EditorClassIdentifier: 
-  cardType: 1
-  thingToSpawn: {fileID: 6367425713997554906, guid: 5a6ca3c44cabfb74496925448968c105,
+  cardType: 0
+  thingToSpawn: {fileID: 6715765027364090968, guid: 4468e71c45cdfa2418529d551aa2a933,
     type: 3}
-  name: Wizard
-  description: You shall not pass
-  cost: 15
-  artwork: {fileID: 21300000, guid: e28594755fe5d584abac3f76cff1d0cb, type: 3}
-  attackPower: 10
+  buildingInProgress: {fileID: 4237717890610954218, guid: f65c5e438cec55d4aa5d361328c3d69c,
+    type: 3}
+  timeToBuild: 6
+  name: Generator
+  description: A building that generates gold
+  artwork: {fileID: 21300000, guid: 71ec9dd2e1a8949479be6de06bd5f895, type: 3}
+  cost: 20
+  attackPower: 0
   attackSpeed: 5
-  buildingRange: 5
-  minionHealth: 120
+  buildingRange: 0
+  minionHealth: 10
+  minionArmor: 0

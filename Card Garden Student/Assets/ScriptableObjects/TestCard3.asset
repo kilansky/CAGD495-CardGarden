@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: TestCard3
   m_EditorClassIdentifier: 
   cardType: 1
-  thingToSpawn: {fileID: 1759942344089282827, guid: 561e6038f68a28a408410a963ac12bb3,
+  thingToSpawn: {fileID: 6367425713997554906, guid: 5a6ca3c44cabfb74496925448968c105,
     type: 3}
   buildingInProgress: {fileID: 0}
   timeToBuild: 0
-  name: Archer
-  description: Fires arrows at close range
-  artwork: {fileID: 21300000, guid: 12fc63c3ae291bc40bbd00f8ea5d59d8, type: 3}
-  cost: 25
-  attackPower: 5
-  attackSpeed: 10
+  name: Gardener
+  description: Frodos best friend
+  artwork: {fileID: 21300000, guid: e28594755fe5d584abac3f76cff1d0cb, type: 3}
+  cost: 15
+  attackPower: 10
+  attackSpeed: 5
   buildingRange: 5
-  minionHealth: 80
+  minionHealth: 120
+  minionArmor: 0

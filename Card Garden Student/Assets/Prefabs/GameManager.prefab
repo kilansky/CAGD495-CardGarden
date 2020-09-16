@@ -976,7 +976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3c156cf5bc3324db5ed93246d67e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerGold: 0
+  playerGold: 50
   baseGoldIncome: 0
   goldIncome: 0
   goldIncomeTimer: 0
@@ -1524,12 +1524,10 @@ MonoBehaviour:
   cards:
   - cardType: {fileID: 11400000, guid: 83ccba1b45e1bb04e94477b921693b9b, type: 2}
     amtInDeck: 5
-  - cardType: {fileID: 11400000, guid: cc6c4c78268a4dd46b7b3928620d4988, type: 2}
-    amtInDeck: 5
-  - cardType: {fileID: 11400000, guid: 351d0748133e6994f886a2a77bd9e266, type: 2}
-    amtInDeck: 5
   - cardType: {fileID: 11400000, guid: 903db3872dd5a9b4db99ec33f950ea51, type: 2}
     amtInDeck: 5
+  - cardType: {fileID: 11400000, guid: e1e4cf2eff5bb6f409758750c42e07e4, type: 2}
+    amtInDeck: 10
   hand: []
 --- !u!114 &1311314090
 MonoBehaviour:

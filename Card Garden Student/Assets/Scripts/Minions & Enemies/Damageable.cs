@@ -16,7 +16,7 @@ public class Damageable : MonoBehaviour
     {
         Health -= value;
         print(gameObject.name + " has taken " + value + " damage with " + Health + " health left.");
-        if (Health < 0) Die();
+        if (Health <= 0) Die();
     }
 
     private void Die()

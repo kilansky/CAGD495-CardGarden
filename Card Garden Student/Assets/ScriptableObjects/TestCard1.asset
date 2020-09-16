@@ -26,3 +26,4 @@ MonoBehaviour:
   attackSpeed: 10
   buildingRange: 25
   minionHealth: 10
+  minionArmor: 0

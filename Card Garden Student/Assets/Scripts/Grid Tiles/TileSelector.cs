@@ -87,6 +87,11 @@ public class TileSelector : MonoBehaviour
             GameObject newSpawn = Instantiate(cardToPlay.thingToSpawn, hitTile.transform.position + new Vector3(0, tileSpawnOffset, 0), Quaternion.identity);
             selectedTile.occupant = newSpawn;
 
+            if(newSpawn.GetComponent<Building>())
+                newSpawn.GetComponent<Building>().cardData = cardToPlay;
+            //else if(newSpawn.GetComponent<PlayerUnitAI>())
+                //newSpawn.GetComponent<PlayerUnitAI>().cardData = cardToPlay;
+
             //Reduce player gold amount
             PlayerStats.Instance.playerGold -= cardToPlay.cost;
         }
