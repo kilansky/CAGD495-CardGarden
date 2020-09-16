@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileSelector : MonoBehaviour
+public class CardPlacement : MonoBehaviour
 {
     public float tileSpawnOffset = 1f;
     public RectTransform HandZone;

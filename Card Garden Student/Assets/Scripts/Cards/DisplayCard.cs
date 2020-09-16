@@ -47,4 +47,9 @@ public class DisplayCard : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        //Set the card cost text color to be red if the player cannot afford the card
+        costText.color = (PlayerStats.Instance.playerGold >= card.cost) ? Color.black : Color.red;
+    }
 }

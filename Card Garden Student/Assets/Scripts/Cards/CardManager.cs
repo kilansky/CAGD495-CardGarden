@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 [System.Serializable]
@@ -8,9 +9,12 @@ public class ObjectReferences
 {
     public GameObject emptyCard;
     public Transform handZone;
+    public Button drawButton;
+    public Button discardButton;
     public Transform deckHolder;
     public Transform discardHolder;
     public TextMeshProUGUI deckQuantityText;
+    public TextMeshProUGUI cardCostText;
     public TextMeshProUGUI discardQuantityText;
 }
 
@@ -29,19 +33,38 @@ public class CardManager : SingletonPattern<CardManager>
     //[Header("Cards & Deck Setup")]
     public int maxHandSize = 5;
     public float timeToDraw = 5f;
+    public int baseCardCost = 10;
+    public int costIncPerCard = 5;
     public bool drawHandOnStart;
     public DeckQuantity[] cards;
 
+    [HideInInspector]
+    public List<GameObject> hand = new List<GameObject>();
+
+    private int cardCost;
     private List<GameObject> deck = new List<GameObject>();
-    [HideInInspector] public List<GameObject> hand = new List<GameObject>();
     private List<GameObject> discard = new List<GameObject>();
 
     private void Start()
     {
+        cardCost = baseCardCost;
+
         GenerateDeck();
 
         if(drawHandOnStart)
             DrawHand();
+    }
+
+    private void Update()
+    {
+        //Set the draw button to be interactable if the player has enough gold to buy a new card and does not have the max number of cards
+        objectReferences.drawButton.interactable = (PlayerStats.Instance.playerGold >= cardCost && hand.Count < maxHandSize) ? true : false;
+
+        //Set the discard button to be interactable if the player has selected a card
+        objectReferences.discardButton.interactable = (CardSelector.cardSelected) ? true : false;
+
+        //Set the card cost text color to be red if the player cannot afford to purchase a card
+        objectReferences.cardCostText.color = (PlayerStats.Instance.playerGold >= cardCost) ? Color.black : Color.red;
     }
 
     //Creates a new deck of cards using the cards array
@@ -127,14 +150,21 @@ public class CardManager : SingletonPattern<CardManager>
             UpdateCardText();
         }
         else
-        {
             Debug.Log("Failed to discard a card because no card was selected");
-        }
     }
+
+    public void PurchaseCard()
+    {
+        PlayerStats.Instance.playerGold -= cardCost;
+        cardCost += costIncPerCard;
+        DrawCard();
+    }
+
 
     private void UpdateCardText()
     {
-        objectReferences.deckQuantityText.text = deck.Count.ToString();
-        objectReferences.discardQuantityText.text = discard.Count.ToString();
+        objectReferences.deckQuantityText.text = "(" + deck.Count.ToString() + ")";
+        objectReferences.discardQuantityText.text = "(" + discard.Count.ToString() + ")";
+        objectReferences.cardCostText.text = cardCost.ToString();
     }
 }

@@ -12,7 +12,10 @@ public class Building : MonoBehaviour
 
     private void Start()
     {
-        float scaleAmt = cardData.attackRadius * 2;
-        rangeSphere.transform.localScale = new Vector3(scaleAmt, scaleAmt, scaleAmt);
+        if(buildingSubtype == BuildingSubtype.Tower)
+        {
+            float scaleAmt = cardData.attackRadius * 2;
+            rangeSphere.transform.localScale = new Vector3(scaleAmt, scaleAmt, scaleAmt);
+        }
     }
 }
