@@ -11,13 +11,13 @@ public class EnemyUnitAI : MonoBehaviour
         Move
     }
     
-    private int CurrentLevel
+    public int CurrentLevel
     {
         get { return gameObject.GetComponent<Levelupable>().level - 1; }
     }
 
-    public int[] maxHealth, armor, damage, attackRadius;
-    public float[] attackSpeed, movementSpeed;
+    public int[] maxHealth, armor, damage;
+    public float[] attackRadius, attackSpeed, movementSpeed;
     public int goldDropped;
     public string enemyClass, affix;
 
@@ -56,9 +56,9 @@ public class EnemyUnitAI : MonoBehaviour
         List<GameObject> enemies = DamageablesNearby();
         if (enemies.Count > 0)
         {
-            print("attackstate");
             state = State.Attack;
             agent.speed = 0;
+            attackTimer = 0;
         }
     }
 
@@ -75,13 +75,12 @@ public class EnemyUnitAI : MonoBehaviour
 
     // will check the surrounding area, if there is anything to hit, it will deal damage to 
     // the first thing it found
-    // if there is nothing to hit then the player will go back to move
+    // if there is nothing to hit then the enemy will go back to move
     private void DealDamage()
     {
         List<GameObject> enemies = DamageablesNearby();
         if (enemies.Count == 0)
         {
-            print("movestate");
             state = State.Move;
             agent.speed = movementSpeed[CurrentLevel];
             return;

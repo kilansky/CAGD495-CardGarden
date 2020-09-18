@@ -9,19 +9,31 @@ public class Damageable : MonoBehaviour
 
     private void Start()
     {
-        Health = startingHealth; 
+        PlayerUnitAI p = gameObject.GetComponent<PlayerUnitAI>();
+        EnemyUnitAI e = gameObject.GetComponent<EnemyUnitAI>();
+        if (e != null)
+        {
+            Health = e.maxHealth[e.CurrentLevel];
+        }
+        else if (p != null)
+        {
+            Health = p.maxHealth[p.CurrentLevel];
+        }
+        else
+        {
+            Health = startingHealth; 
+        }
     }
 
     public void TakeDamage(int value)
     {
         Health -= value;
-        print(gameObject.name + " has taken " + value + " damage with " + Health + " health left.");
+        print(gameObject.name + " took " + value + " damage with " + Health + " health left.");
         if (Health <= 0) Die();
     }
 
     private void Die()
     {
-        print(gameObject.name + " has died.");
         Destroy(this.gameObject);
     }
 }

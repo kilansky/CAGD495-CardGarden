@@ -83,14 +83,16 @@ public class CardPlacement : MonoBehaviour
             //Discard the selected card
             CardManager.Instance.DiscardCard();
 
+
             //Spawn the object stored on the selected card
-            GameObject newSpawn = Instantiate(cardToPlay.thingToSpawn, hitTile.transform.position + new Vector3(0, tileSpawnOffset, 0), Quaternion.identity);
+            GameObject newSpawn = Instantiate(cardToPlay.thingInProgress, hitTile.transform.position + new Vector3(0, tileSpawnOffset, 0), Quaternion.identity);
             selectedTile.occupant = newSpawn;
 
-            if(newSpawn.GetComponent<Building>())
-                newSpawn.GetComponent<Building>().cardData = cardToPlay;
-            //else if(newSpawn.GetComponent<PlayerUnitAI>())
-                //newSpawn.GetComponent<PlayerUnitAI>().cardData = cardToPlay;
+            //Set the card data of the object under construction
+            if (newSpawn.GetComponent<BuildingConstruction>())
+                newSpawn.GetComponent<BuildingConstruction>().SetCard(cardToPlay);
+            else if(newSpawn.GetComponent<MinionConstruction>())
+                newSpawn.GetComponent<MinionConstruction>().SetCard(cardToPlay);
 
             //Reduce player gold amount
             PlayerStats.Instance.playerGold -= cardToPlay.cost;
@@ -103,10 +105,11 @@ public class CardPlacement : MonoBehaviour
     {
         int playerGold = (int)PlayerStats.Instance.playerGold;
 
-        //Checks if tile is not occupied and the player has enough gold to pay for the card
+        //Check if the tile is not occupied
         if (!selectedTile.occupant)
         {
-            if(playerGold >= selectedCard.cost)
+            //Check if player has enough gold to pay for the card
+            if (playerGold >= selectedCard.cost)
             {
                 //Tile = Empty && Card = Building
                 if (selectedTile.tileType == tileEnum.Building && selectedCard.cardType == CardType.Building)

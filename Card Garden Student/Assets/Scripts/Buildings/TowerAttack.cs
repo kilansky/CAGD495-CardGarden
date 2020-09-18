@@ -8,7 +8,7 @@ public class TowerAttack : MonoBehaviour
     private Transform firePoint;
     private GameObject projectile;
     private float attackRate;
-    private float attackPower;
+    private int attackPower;
 
     private Transform target;
     private float fireCountdown = 0;
@@ -21,7 +21,7 @@ public class TowerAttack : MonoBehaviour
         firePoint = tower.firePoint;
         projectile = tower.projectile;
         attackRate = tower.cardData.attackRate;
-        attackPower = tower.cardData.attackPower;
+        attackPower = (int)tower.cardData.attackPower;
     }
 
     private void Update()
@@ -39,7 +39,7 @@ public class TowerAttack : MonoBehaviour
             if (target && fireCountdown <= 0)
             {
                 FireProjectile();
-                fireCountdown = 1f / attackRate;
+                fireCountdown = attackRate;
             }
 
             //Decrease the fireCountdown timer
