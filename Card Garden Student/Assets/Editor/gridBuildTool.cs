@@ -4,7 +4,7 @@ using UnityEditor;
 
 public class gridBuildTool : EditorWindow
 {
-	public enum tileEnum
+	/*public enum tileEnum
 	{
 		Locked,
 		Lane,
@@ -124,7 +124,7 @@ public class gridBuildTool : EditorWindow
     {
 		assetsLoaded = true;
 		AssetBundle.UnloadAllAssetBundles(true);
-        var myLoadedAssetBundle = AssetBundle.LoadFromFile("Assets/AssetBundles/testbundle");
+        var myLoadedAssetBundle = AssetBundle.LoadFromFile("Assets/AssetBundles/tiletypes");
 		grid.assetList = myLoadedAssetBundle.LoadAllAssets();
         if (myLoadedAssetBundle == null)
         {
@@ -132,5 +132,5 @@ public class gridBuildTool : EditorWindow
 			assetsLoaded = false;
             return;
         }
-	}
+	}*/
 }

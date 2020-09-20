@@ -1,7 +1,7 @@
 ManifestFileVersion: 0
-CRC: 2723207930
+CRC: 1361084761
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: testbundle
+      Name: tiletypes
       Dependencies: {}

@@ -3,7 +3,7 @@ using System.IO;
 
 public class CreateAssetBundles
 {
-    [MenuItem("Assets/Build AssetBundles")]
+    [MenuItem("Level Designer Tools/Build Asset Bundles")]
     static void BuildAllAssetBundles()
     {
         string assetBundleDirectory = "Assets/AssetBundles";
