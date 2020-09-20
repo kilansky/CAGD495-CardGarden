@@ -14,18 +14,19 @@ public class GridTileTool : EditorWindow
 		Locked
 	}
 	
-	public GameObject test;
 	private List<tileEnum> gridList = new List<tileEnum>();
 	private List<GameObject> tileList = new List<GameObject>();
 	private int rowSize, columnSize, oldRowSize, oldColumnSize;
 	private Vector2 scrollPos = new Vector2(0,0);
 	private bool assetsLoaded = false;
+	private bool gridInstantiated = false;
 	
 	private GameObject Lane;
 	private GameObject Building;
 	private GameObject Spawner;
 	private GameObject Locked;
-	
+	private GameObject Grid;
+
 	[MenuItem("Level Designer Tools/Grid Build Tool")]
 	public static void instantiateWindow()
 	{
@@ -39,6 +40,10 @@ public class GridTileTool : EditorWindow
 		EditorGUI.BeginChangeCheck();
 		rowSize = EditorGUILayout.IntField("Row Size", rowSize);
 		columnSize = EditorGUILayout.IntField("Column Size", columnSize);
+		if(GUILayout.Button("Rebuild Grid"))
+		{
+			rebuildGrid();
+		}
 		
 		if(EditorGUI.EndChangeCheck())
 		{
@@ -58,6 +63,12 @@ public class GridTileTool : EditorWindow
 		{
 			loadAssets();
 		}
+		if(!gridInstantiated)
+		{
+			Grid = new GameObject();
+			Grid.name = "Grid";
+			gridInstantiated = true;
+		}
 		if(gridList.Count>0)
 		{
 			int i = 0;
@@ -70,10 +81,48 @@ public class GridTileTool : EditorWindow
 				EditorGUILayout.BeginHorizontal();
 				for(; k<columnSize; k++)
 				{
+					EditorGUI.BeginChangeCheck();
 					gridList[j] = (tileEnum)EditorGUILayout.EnumPopup
 					(
 						"Tile "+(i+1)+","+(k+1), gridList[j]
 					);
+					if(EditorGUI.EndChangeCheck())
+					{
+						for(int h=0; h<tileList.Count; h++)
+						{
+							if(tileList[h].name == "Tile ("+(i+1)+","+(k+1)+")")
+							{
+								DestroyImmediate(tileList[h]);
+								tileList.Remove(tileList[h]);
+								break;
+							}
+						}
+						if(gridList[j] == tileEnum.Building)
+						{
+							GameObject toSpawn = Instantiate((GameObject)Building, new Vector3(2*(i+1), 1, 2*(k+1)), Quaternion.identity, Grid.GetComponent<Transform>());
+							toSpawn.name = "Tile ("+(i+1)+","+(k+1)+")";
+							tileList.Add(toSpawn);
+						}
+						else if(gridList[j] == tileEnum.Lane)
+						{
+							GameObject toSpawn = Instantiate((GameObject)Lane, new Vector3(2*(i+1), 1, 2*(k+1)), Quaternion.identity, Grid.GetComponent<Transform>());
+							toSpawn.name = "Tile ("+(i+1)+","+(k+1)+")";
+							tileList.Add(toSpawn);
+						}
+						else if(gridList[j] == tileEnum.Lane_Spawn)
+						{
+							GameObject toSpawn = Instantiate((GameObject)Spawner, new Vector3(2*(i+1), 1, 2*(k+1)), Quaternion.identity, Grid.GetComponent<Transform>());
+							toSpawn.name = "Tile ("+(i+1)+","+(k+1)+")";
+							tileList.Add(toSpawn);
+						}
+						else if(gridList[j] == tileEnum.Locked)
+						{
+							GameObject toSpawn = Instantiate((GameObject)Locked, new Vector3(2*(i+1), 1, 2*(k+1)), Quaternion.identity, Grid.GetComponent<Transform>());
+							toSpawn.name = "Tile ("+(i+1)+","+(k+1)+")";
+							tileList.Add(toSpawn);
+						}
+						
+					}
 					j++;
 				}
 				EditorGUILayout.EndHorizontal();
@@ -81,7 +130,6 @@ public class GridTileTool : EditorWindow
 			}
 			EditorGUILayout.EndScrollView();
 		}
-		
 	}
 	
 	/*
@@ -98,7 +146,7 @@ public class GridTileTool : EditorWindow
 				for(; k<columnSize; k++)
 				{
 					gridList.Add(new tileEnum());
-					GameObject toSpawn = Instantiate((GameObject)Locked, new Vector3(2*(i+1), 1, 2*(k+1)), Quaternion.identity);//test.GetComponent<Transform>()
+					GameObject toSpawn = Instantiate((GameObject)Locked, new Vector3(2*(i+1), 1, 2*(k+1)), Quaternion.identity, Grid.GetComponent<Transform>());
 					toSpawn.name = "Tile ("+(i+1)+","+(k+1)+")";
 					tileList.Add(toSpawn);
 				}
@@ -112,7 +160,7 @@ public class GridTileTool : EditorWindow
 				for(; k<rowSize; k++)
 				{
 					gridList.Add(new tileEnum());
-					GameObject toSpawn = Instantiate((GameObject)Locked, new Vector3(2*(k+1), 1, 2*(i+1)), Quaternion.identity);//test.GetComponent<Transform>()
+					GameObject toSpawn = Instantiate((GameObject)Locked, new Vector3(2*(k+1), 1, 2*(i+1)), Quaternion.identity, Grid.GetComponent<Transform>());
 					toSpawn.name = "Tile ("+(k+1)+","+(i+1)+")";
 					tileList.Add(toSpawn);
 				}
@@ -134,7 +182,6 @@ public class GridTileTool : EditorWindow
 		{
 			for(int k=oldRowSize; k>rowSize; k--)
 			{
-				Debug.Log(k);
 				for(int i=0; i<tileList.Count; i++)
 				{
 					if(tileList[i].name.IndexOf(k.ToString()) != -1)
@@ -175,6 +222,20 @@ public class GridTileTool : EditorWindow
 	
 	private void rebuildGrid()
 	{
+		int k = 0;
+		int j = 0;
+		for(int i=0; i<rowSize; i++)
+		{
+			for(; k<columnSize; k++)
+			{
+				DestroyImmediate(tileList[j]);
+				GameObject toSpawn = Instantiate((GameObject)Locked, new Vector3(2*(k+1), 1, 2*(i+1)), Quaternion.identity, Grid.GetComponent<Transform>());
+				toSpawn.name = "Tile ("+(k+1)+","+(i+1)+")";
+				tileList[j] = toSpawn;
+				j++;
+			}
+			k=0;
+		}
 	}		
 	
     void loadAssets()
