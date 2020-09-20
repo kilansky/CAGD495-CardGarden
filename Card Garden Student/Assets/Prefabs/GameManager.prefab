@@ -1795,10 +1795,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5419103143061764496}
     m_Modifications:
+    - target: {fileID: 4491013056069806963, guid: b5b9aa684ae0b9140b5b1a69fb0a33f7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4491013056519653078, guid: b5b9aa684ae0b9140b5b1a69fb0a33f7,
         type: 3}
       propertyPath: m_Name
       value: GameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491013056519653078, guid: b5b9aa684ae0b9140b5b1a69fb0a33f7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4491013056519653079, guid: b5b9aa684ae0b9140b5b1a69fb0a33f7,
         type: 3}
@@ -1854,6 +1864,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491013056519653079, guid: b5b9aa684ae0b9140b5b1a69fb0a33f7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4491013057013215965, guid: b5b9aa684ae0b9140b5b1a69fb0a33f7,
         type: 3}

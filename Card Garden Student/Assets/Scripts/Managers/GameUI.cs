@@ -11,10 +11,6 @@ public class GameUI : SingletonPattern<GameUI>
     [SerializeField]
     private Text incomeText = null;
     private bool showIncome = false;
-    [SerializeField]
-    private Text drawTimerText = null;
-    [SerializeField]
-    private Text drawCostText = null;
 
     [Header("Pop up")]
     // used for tutorial, new cards, etc
@@ -32,11 +28,9 @@ public class GameUI : SingletonPattern<GameUI>
 
     private void RefreshPlayerStatsUI()
     {
-        goldText.text = PlayerStats.Instance.playerGold.ToString();
+        goldText.text = PlayerStats.Instance.PlayerGold.ToString();
         IncomeColorCheck();
-        incomeText.text = "(+" + PlayerStats.Instance.goldIncome + ")";
-        drawTimerText.text = PlayerStats.Instance.cardDrawTimer.ToString();
-        drawCostText.text = PlayerStats.Instance.CardDrawCost().ToString();
+        incomeText.text = "(+" + PlayerStats.Instance.GoldIncome + ")";
     }
 
     private void OpenPU(string puText)
@@ -57,18 +51,18 @@ public class GameUI : SingletonPattern<GameUI>
     {
         if (showIncome)
         {
-            return PlayerStats.Instance.playerGold.ToString() + " (+" + PlayerStats.Instance.goldIncome + ")";
+            return PlayerStats.Instance.PlayerGold.ToString() + " (+" + PlayerStats.Instance.GoldIncome + ")";
         }
         else
         {
-            return PlayerStats.Instance.playerGold.ToString();
+            return PlayerStats.Instance.PlayerGold.ToString();
         }
     }
 
     // Change Color of income depending on how good it is
     private void IncomeColorCheck()
     {
-        float income = PlayerStats.Instance.goldIncome;
+        float income = PlayerStats.Instance.GoldIncome;
         if (income == 0)
         {
             showIncome = false;

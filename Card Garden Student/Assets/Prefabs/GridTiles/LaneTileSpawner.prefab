@@ -18,7 +18,7 @@ MonoBehaviour:
   - {fileID: 1759942344089282827, guid: 255fe9c50d45de04da0479f2ab413217, type: 3}
   - {fileID: 1759942344089282827, guid: 255fe9c50d45de04da0479f2ab413217, type: 3}
   - {fileID: 1759942344089282827, guid: 255fe9c50d45de04da0479f2ab413217, type: 3}
-  timeBetweenSpawns: 1
+  timeBetweenSpawns: 2
   spawnerOffset: {x: 0, y: 1.5, z: 0}
 --- !u!1001 &1892037454570449625
 PrefabInstance:

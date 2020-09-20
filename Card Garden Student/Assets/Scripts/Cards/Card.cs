@@ -25,5 +25,5 @@ public class Card : ScriptableObject
     [HideInInspector] public float attackRadius = 0;
     [HideInInspector] public float minionHealth = 0;
     [HideInInspector] public float minionArmor = 0;
-    [HideInInspector] public float goldGenRate = 0;
+    [HideInInspector] public float goldGenAmount = 0;
 }

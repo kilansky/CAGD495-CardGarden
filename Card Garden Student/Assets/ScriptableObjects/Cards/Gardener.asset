@@ -19,7 +19,8 @@ MonoBehaviour:
   thingInProgress: {fileID: 5547215595040076557, guid: dcb06b9ee7b770a4f870dea810e8cf97,
     type: 3}
   name: Gardner
-  description: Gandalf the gardener, at your service
+  description: Sittin' restless under the moonlight, I know I'm getting ready to
+    kill. They say we're going in with the day light; I don't want to but I will.
   artwork: {fileID: 21300000, guid: e28594755fe5d584abac3f76cff1d0cb, type: 3}
   cost: 35
   timeToBuild: 0.5

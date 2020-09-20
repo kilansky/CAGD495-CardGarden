@@ -2345,6 +2345,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1802502384}
     m_Modifications:
+    - target: {fileID: 2466295457647670283, guid: 88d2468961e94614cb0316ce11b13679,
+        type: 3}
+      propertyPath: enemiesToSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 1759942344089282827, guid: 2d650c4ba8e8d3b468f47143277bcf6b,
+        type: 3}
+    - target: {fileID: 2466295457647670283, guid: 88d2468961e94614cb0316ce11b13679,
+        type: 3}
+      propertyPath: enemiesToSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 1759942344089282827, guid: 2d650c4ba8e8d3b468f47143277bcf6b,
+        type: 3}
+    - target: {fileID: 2466295457647670283, guid: 88d2468961e94614cb0316ce11b13679,
+        type: 3}
+      propertyPath: enemiesToSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 1759942344089282827, guid: 2d650c4ba8e8d3b468f47143277bcf6b,
+        type: 3}
+    - target: {fileID: 2466295457647670283, guid: 88d2468961e94614cb0316ce11b13679,
+        type: 3}
+      propertyPath: enemiesToSpawn.Array.data[3]
+      value: 
+      objectReference: {fileID: 1759942344089282827, guid: 2d650c4ba8e8d3b468f47143277bcf6b,
+        type: 3}
+    - target: {fileID: 2466295457647670283, guid: 88d2468961e94614cb0316ce11b13679,
+        type: 3}
+      propertyPath: enemiesToSpawn.Array.data[4]
+      value: 
+      objectReference: {fileID: 1759942344089282827, guid: 2d650c4ba8e8d3b468f47143277bcf6b,
+        type: 3}
     - target: {fileID: 4766939619786845423, guid: 88d2468961e94614cb0316ce11b13679,
         type: 3}
       propertyPath: m_Name
@@ -17256,6 +17286,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5419103143727216996, guid: 6aef2cc47039f2c40a604ca65a49c584,
+        type: 3}
+      propertyPath: startingGold
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5419103143727216996, guid: 6aef2cc47039f2c40a604ca65a49c584,
+        type: 3}
+      propertyPath: goldIncomeRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5419103143727216996, guid: 6aef2cc47039f2c40a604ca65a49c584,
+        type: 3}
+      propertyPath: baseGoldIncome
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aef2cc47039f2c40a604ca65a49c584, type: 3}

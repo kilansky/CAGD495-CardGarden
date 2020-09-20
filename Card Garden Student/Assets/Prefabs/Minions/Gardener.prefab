@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5547215595040076547}
   - component: {fileID: 5547215595040076546}
   - component: {fileID: 5547215595040076545}
-  - component: {fileID: 5547215595040076544}
   - component: {fileID: 5547215595040076559}
   - component: {fileID: 5547215595040076558}
   m_Layer: 0
@@ -110,13 +109,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5429862b0e41f6c43ac2849d81b9b992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 05000000
-  armor: 05000000
-  damage: 05000000
-  attackRadius:
-  - 1.1
-  attackSpeed:
-  - 1
+  maxHealth: 10
+  armor: 5
+  damage: 5
+  attackRadius: 1.5
+  attackSpeed: 2
+  projectilePrefab: {fileID: 672357267275160715, guid: fe15401d35268f34a9ced613057df1dd,
+    type: 3}
 --- !u!114 &5547215595040076545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,21 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 0
---- !u!114 &5547215595040076544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5547215595040076557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c80c85b179e71d84c907b53461fa26a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 1
-  maxLevel: 1
-  startingLevel: 1
 --- !u!54 &5547215595040076559
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -28,4 +28,4 @@ MonoBehaviour:
   attackRadius: 0
   minionHealth: 0
   minionArmor: 0
-  goldGenRate: 1
+  goldGenAmount: 1

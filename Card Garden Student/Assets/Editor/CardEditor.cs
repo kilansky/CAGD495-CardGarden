@@ -57,7 +57,7 @@ public class CardEditor : Editor
             }
             //Generator Exclusive Stats
             else if (card.buildingSubtype == BuildingSubtype.Generator)
-                card.goldGenRate = EditorGUILayout.FloatField("Gold Per Sec", card.goldGenRate);
+                card.goldGenAmount = EditorGUILayout.FloatField("Gold Gen Amount", card.goldGenAmount);
         }
 
         //Minion Exclusive Stats

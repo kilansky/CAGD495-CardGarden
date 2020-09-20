@@ -10,13 +10,9 @@ public class PlayerUnitAI : MonoBehaviour
         Idle
     }
     
-    public int CurrentLevel
-    {
-        get { return gameObject.GetComponent<Levelupable>().level - 1; }
-    }
-
-    public int[] maxHealth, armor, damage;
-    public float[] attackRadius, attackSpeed;
+    public int maxHealth, armor, damage;
+    public float attackRadius, attackSpeed;
+    public GameObject projectilePrefab;
 
     // private vars
     private State state;
@@ -25,7 +21,7 @@ public class PlayerUnitAI : MonoBehaviour
     private void Start()
     {
         state = State.Idle;
-        attackTimer = attackSpeed[CurrentLevel];
+        attackTimer = attackSpeed;
     }
 
     private void Update()
@@ -55,11 +51,11 @@ public class PlayerUnitAI : MonoBehaviour
     private void StateAttack()
     {
         attackTimer = Mathf.Clamp(
-            attackTimer - Time.deltaTime, 0, attackSpeed[CurrentLevel]);
+            attackTimer - Time.deltaTime, 0, attackSpeed);
         if (attackTimer == 0)
         {
             DealDamage();
-            attackTimer = attackSpeed[CurrentLevel];
+            attackTimer = attackSpeed;
         }
     }
 
@@ -75,14 +71,17 @@ public class PlayerUnitAI : MonoBehaviour
             return;
         }
 
-        enemies[0].GetComponent<Damageable>().TakeDamage(damage[CurrentLevel]);
+        GameObject p = Instantiate(projectilePrefab, transform);
+        p.GetComponent<MeshRenderer>().material.color = Color.green;
+        p.GetComponent<Projectile>().SetDamage(damage);
+        p.GetComponent<Projectile>().SetTarget(enemies[0].transform);
     }
 
     private List<GameObject> DamageablesNearby()
     {
         List<GameObject> damageables = new List<GameObject>();
 
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius[CurrentLevel]);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius);
         foreach (var hitCollider in hitColliders)
         {
             Damageable d = hitCollider.GetComponent<Damageable>();
@@ -96,7 +95,7 @@ public class PlayerUnitAI : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, attackRadius[CurrentLevel]);
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
 }
 

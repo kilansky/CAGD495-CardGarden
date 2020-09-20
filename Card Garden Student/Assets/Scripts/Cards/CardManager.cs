@@ -58,13 +58,13 @@ public class CardManager : SingletonPattern<CardManager>
     private void Update()
     {
         //Set the draw button to be interactable if the player has enough gold to buy a new card and does not have the max number of cards
-        objectReferences.drawButton.interactable = (PlayerStats.Instance.playerGold >= cardCost && hand.Count < maxHandSize) ? true : false;
+        objectReferences.drawButton.interactable = (PlayerStats.Instance.PlayerGold >= cardCost && hand.Count < maxHandSize) ? true : false;
 
         //Set the discard button to be interactable if the player has selected a card
         objectReferences.discardButton.interactable = (CardSelector.cardSelected) ? true : false;
 
         //Set the card cost text color to be red if the player cannot afford to purchase a card
-        objectReferences.cardCostText.color = (PlayerStats.Instance.playerGold >= cardCost) ? Color.black : Color.red;
+        objectReferences.cardCostText.color = (PlayerStats.Instance.PlayerGold >= cardCost) ? Color.black : Color.red;
     }
 
     //Creates a new deck of cards using the cards array
@@ -155,7 +155,7 @@ public class CardManager : SingletonPattern<CardManager>
 
     public void PurchaseCard()
     {
-        PlayerStats.Instance.playerGold -= cardCost;
+        PlayerStats.Instance.SubtractGold(cardCost);
         cardCost += costIncPerCard;
         DrawCard();
     }

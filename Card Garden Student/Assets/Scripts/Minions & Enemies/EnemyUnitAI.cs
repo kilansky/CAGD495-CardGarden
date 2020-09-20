@@ -10,16 +10,20 @@ public class EnemyUnitAI : MonoBehaviour
         Attack,
         Move
     }
-    
-    public int CurrentLevel
-    {
-        get { return gameObject.GetComponent<Levelupable>().level - 1; }
-    }
 
-    public int[] maxHealth, armor, damage;
-    public float[] attackRadius, attackSpeed, movementSpeed;
+    public enum EnemyClass
+    {
+        Paladin,
+        Archer,
+        Rogue
+    }
+    
+    public int maxHealth, armor, damage;
+    public float attackRadius, attackSpeed, movementSpeed;
     public int goldDropped;
-    public string enemyClass, affix;
+    public string affix;
+    public GameObject projectilePrefab;
+    public EnemyClass enemyClass;
 
     // private vars
     private State state;
@@ -30,11 +34,11 @@ public class EnemyUnitAI : MonoBehaviour
     private void Start()
     {
         state = State.Move;
-        attackTimer = attackSpeed[CurrentLevel];
+        attackTimer = attackSpeed;
         agent = GetComponent<NavMeshAgent>();
         lairTransform = GameObject.FindWithTag("Lair").GetComponent<Transform>();
         agent.SetDestination(lairTransform.position);
-        agent.speed = movementSpeed[CurrentLevel];
+        agent.speed = movementSpeed;
     }
 
     private void Update()
@@ -65,11 +69,11 @@ public class EnemyUnitAI : MonoBehaviour
     private void StateAttack()
     {
         attackTimer = Mathf.Clamp(
-            attackTimer - Time.deltaTime, 0, attackSpeed[CurrentLevel]);
+            attackTimer - Time.deltaTime, 0, attackSpeed);
         if (attackTimer == 0)
         {
             DealDamage();
-            attackTimer = attackSpeed[CurrentLevel];
+            attackTimer = attackSpeed;
         }
     }
 
@@ -82,18 +86,33 @@ public class EnemyUnitAI : MonoBehaviour
         if (enemies.Count == 0)
         {
             state = State.Move;
-            agent.speed = movementSpeed[CurrentLevel];
+            agent.speed = movementSpeed;
             return;
         }
 
-        enemies[0].GetComponent<Damageable>().TakeDamage(damage[CurrentLevel]);
+        GameObject p = Instantiate(projectilePrefab, transform);
+        switch (enemyClass)
+        {
+            case EnemyClass.Rogue:
+                p.GetComponent<MeshRenderer>().material.color = Color.gray;
+                break;
+            case EnemyClass.Paladin:
+                p.GetComponent<MeshRenderer>().material.color = Color.yellow;
+                break;
+            case EnemyClass.Archer:
+                p.GetComponent<MeshRenderer>().material.color = Color.red;
+                break;
+        }
+
+        p.GetComponent<Projectile>().SetDamage(damage);
+        p.GetComponent<Projectile>().SetTarget(enemies[0].transform);
     }
 
     private List<GameObject> DamageablesNearby()
     {
         List<GameObject> damageables = new List<GameObject>();
 
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius[CurrentLevel]);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius);
         foreach (var hitCollider in hitColliders)
         {
             Damageable d = hitCollider.GetComponent<Damageable>();
@@ -108,7 +127,7 @@ public class EnemyUnitAI : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, attackRadius[CurrentLevel]);
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
 }
 

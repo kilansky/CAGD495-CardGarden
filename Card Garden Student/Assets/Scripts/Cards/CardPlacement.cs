@@ -95,7 +95,7 @@ public class CardPlacement : MonoBehaviour
                 newSpawn.GetComponent<MinionConstruction>().SetCard(cardToPlay);
 
             //Reduce player gold amount
-            PlayerStats.Instance.playerGold -= cardToPlay.cost;
+            PlayerStats.Instance.SubtractGold(cardToPlay.cost);
         }
     }
 
@@ -103,7 +103,7 @@ public class CardPlacement : MonoBehaviour
     //Returns true if the selected card can be placed on the selected tile
     private bool validTilePlacement(Tile selectedTile, Card selectedCard)
     {
-        int playerGold = (int)PlayerStats.Instance.playerGold;
+        int playerGold = (int)PlayerStats.Instance.PlayerGold;
 
         //Check if the tile is not occupied
         if (!selectedTile.occupant)

@@ -8,10 +8,23 @@ public class CameraController : MonoBehaviour
 
     public float panSpeed = 20f;
     public float panBorderThickness = 10f;
-    public Vector2 panLimit;
+    public float xPanLimit, xNegPanLimit, zPanLimit, zNegPanlimit = 20f;
     public float scrollSpeed = 20f;
     public float minY = 20f;
     public float maxY = 120f;
+
+    private Vector3 resetLocation;
+    private Quaternion resetRotation;
+    private Vector3 resetScale;
+
+
+    private void Awake()
+    {
+        resetLocation = transform.position;
+        resetRotation = transform.rotation;
+        resetScale = transform.localScale;
+
+    }
 
     private void Update()
     {
@@ -37,10 +50,22 @@ public class CameraController : MonoBehaviour
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         pos.y -= scroll * scrollSpeed * 100f * Time.deltaTime;
 
-        pos.x = Mathf.Clamp(pos.x, -panLimit.x, panLimit.x);
+        pos.x = Mathf.Clamp(pos.x, xNegPanLimit, xPanLimit);
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
-        pos.z = Mathf.Clamp(pos.z, -panLimit.y, panLimit.y);
+        pos.z = Mathf.Clamp(pos.z, zNegPanlimit, zPanLimit);
         transform.position = pos;
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            ResetCamera();
+        }
     }
 
+
+    public void ResetCamera()
+    {
+        transform.position = resetLocation;
+        transform.rotation = resetRotation;
+        transform.localScale = resetScale;
+    }
 }

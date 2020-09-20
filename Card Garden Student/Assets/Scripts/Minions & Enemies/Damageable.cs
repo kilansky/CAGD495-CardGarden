@@ -11,13 +11,14 @@ public class Damageable : MonoBehaviour
     {
         PlayerUnitAI p = gameObject.GetComponent<PlayerUnitAI>();
         EnemyUnitAI e = gameObject.GetComponent<EnemyUnitAI>();
+
         if (e != null)
         {
-            Health = e.maxHealth[e.CurrentLevel];
+            Health = e.maxHealth;
         }
         else if (p != null)
         {
-            Health = p.maxHealth[p.CurrentLevel];
+            Health = p.maxHealth;
         }
         else
         {
@@ -34,6 +35,10 @@ public class Damageable : MonoBehaviour
 
     private void Die()
     {
+        //Add gold if this is object is an enemy
+        if (gameObject.GetComponent<EnemyUnitAI>())
+            PlayerStats.Instance.AddGold(gameObject.GetComponent<EnemyUnitAI>().goldDropped);
+
         Destroy(this.gameObject);
     }
 }
