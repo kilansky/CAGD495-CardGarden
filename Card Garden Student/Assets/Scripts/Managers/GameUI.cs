@@ -6,18 +6,9 @@ using UnityEngine.UI;
 public class GameUI : SingletonPattern<GameUI>
 {
     [Header("Text Components")]
-    [SerializeField]
-    private Text goldText = null;
-    [SerializeField]
-    private Text incomeText = null;
+    [SerializeField] private Text goldText = null;
+    [SerializeField] private Text incomeText = null;
     private bool showIncome = false;
-
-    [Header("Pop up")]
-    // used for tutorial, new cards, etc
-    [SerializeField]
-    private GameObject popUpPanel = null;
-    [SerializeField]
-    private Text puPanelText = null;
 
     // Temorarily updating every frame, change to less frequently to optimize
     private void Update()
@@ -32,19 +23,6 @@ public class GameUI : SingletonPattern<GameUI>
         IncomeColorCheck();
         incomeText.text = "(+" + PlayerStats.Instance.GoldIncome + ")";
     }
-
-    private void OpenPU(string puText)
-    {
-        puPanelText.text = puText;
-        popUpPanel.SetActive(true);
-    }
-    public void ClosePU()
-    {
-        popUpPanel.SetActive(false);
-        // stop coroutine that has it open/close automatically
-    }
-
-    // Add ienuerator with timer to open a popup and make it say something for a brief period. Need it to be able to close itself.
 
     // Composite Income Text
     private string CompositeGoldText()

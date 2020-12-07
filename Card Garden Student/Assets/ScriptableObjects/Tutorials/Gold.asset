@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34df0590d855c0d4d82317100f55bb12, type: 3}
+  m_Name: Gold
+  m_EditorClassIdentifier: 
+  Title: Gold
+  tutorialText: Gold is your most precious resource. All cards cost gold to play
+    and some can grow to be quite expensive. Kill adventurers to gain gold.
+  icon: {fileID: 21300000, guid: 3d615c4efbb7afb4fa0e3ec845bd9516, type: 3}
+  hasBeenShown: 0
+  tutorialIndex: 0

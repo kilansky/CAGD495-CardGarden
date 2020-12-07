@@ -1,0 +1,17 @@
+HOW TO SET UP THE WATER SHADER:
+
+
+1. Everything is found in Shaders/Water Shader Stuff
+
+2. Put CameraDepthTextureMode.cs and NormalsReplacementShaders.cs on the Main Camera
+
+3. On the Camera, change "Depth Texture Mode" to "Depth"
+
+4. On the Camera, plug HiddenNormalsTexture.shader into "Normals Shader"
+
+5. If needed, details on what each property does can be found in ToonWater.shader, in the Properties section at the top.
+
+
+
+Note that it might look strange in the Scene View; this is because it depends on information from the scripts you 
+put on the Main Camera. Keep an eye on the Game View to see how it will look in-game.

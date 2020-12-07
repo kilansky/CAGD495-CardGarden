@@ -2,43 +2,72 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BarUI))]
 public class Damageable : MonoBehaviour
 {
-    public int startingHealth;
-    protected int Health { get; private set; }
+    public float startingHealth;
+    public float Health { get; private set; }
+    public GameObject goldParticlePrefab;
 
+	private PlayerUnitAI p;
+    private EnemyUnitAI e;
+	
     private void Start()
     {
-        PlayerUnitAI p = gameObject.GetComponent<PlayerUnitAI>();
-        EnemyUnitAI e = gameObject.GetComponent<EnemyUnitAI>();
-
+        p = gameObject.GetComponent<PlayerUnitAI>();
+		e = gameObject.GetComponent<EnemyUnitAI>();
         if (e != null)
         {
-            Health = e.maxHealth;
+            Health = e.health;
         }
         else if (p != null)
         {
             Health = p.maxHealth;
         }
-        else
+        else //object is not a player or enemy
         {
             Health = startingHealth; 
+            gameObject.GetComponent<BarUI>().SetMaxHealth(startingHealth);
         }
     }
 
-    public void TakeDamage(int value)
+    public void TakeDamage(float value)
     {
-        Health -= value;
-        print(gameObject.name + " took " + value + " damage with " + Health + " health left.");
-        if (Health <= 0) Die();
+        Health -= value;			
+        //print(gameObject.name + " took " + value + " damage with " + Health + " health left.");
+		gameObject.GetComponent<BarUI>().SetHealth(Health);
+        if (Health <= 0)
+		{
+			Die();
+		}
     }
 
     private void Die()
     {
         //Add gold if this is object is an enemy
         if (gameObject.GetComponent<EnemyUnitAI>())
+        {
             PlayerStats.Instance.AddGold(gameObject.GetComponent<EnemyUnitAI>().goldDropped);
+            if (goldParticlePrefab != null)
+            {
+                GameObject particleInstance = Instantiate(goldParticlePrefab, transform.position, transform.rotation, null);
+                float duration = particleInstance.GetComponentInChildren<ParticleSystem>().main.duration; 
+                Destroy(particleInstance, duration + 1f);
+            }
+            else
+            {
+                Debug.LogWarning("Gold particle not loaded for " + gameObject.name);
+            }
+        }
 
-        Destroy(this.gameObject);
+        //Activate game end if this is the lair
+        if (gameObject.GetComponent<Lair>())
+        {
+			print(Health);
+            MenuUI.Instance.OpenPanel(2);
+            gameObject.SetActive(false);
+        }
+        else
+            Destroy(gameObject);
     }
 }

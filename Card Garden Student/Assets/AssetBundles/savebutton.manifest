@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+CRC: 3567530943
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 014bbfd33813ccd592220d513d25f1b3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e318facccd4ba91ffeaa603a5b1c5a90
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 130771817ca0ca549be600c1920e7f32, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/UI/SaveSelectButton.prefab
+Dependencies: []

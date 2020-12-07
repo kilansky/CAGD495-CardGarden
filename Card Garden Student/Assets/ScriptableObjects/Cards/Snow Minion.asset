@@ -1,0 +1,227 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62e5bbc13b890e44a25f906f2fb1c15, type: 3}
+  m_Name: Snow Minion
+  m_EditorClassIdentifier: 
+  cardType: 1
+  seasonType: {fileID: 11400000, guid: 72fb94292e5d4924ea909da9d91f9755, type: 2}
+  buildingSubtype: 0
+  spellSubtype: 0
+  thingToSpawn: {fileID: 5547215595040076557, guid: 0831056a64d91a3479ad64e3338a6886,
+    type: 3}
+  thingInProgress: {fileID: 5547215595040076557, guid: dcb06b9ee7b770a4f870dea810e8cf97,
+    type: 3}
+  name: Snow Minion
+  description: Snow minion description
+  artwork: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  costs:
+  - 5
+  - 20
+  - 35
+  - 50
+  - 65
+  - 80
+  - 95
+  - 110
+  - 125
+  - 140
+  - 155
+  - 170
+  - 185
+  - 200
+  - 215
+  - 230
+  - 245
+  - 260
+  - 275
+  - 290
+  costStats:
+    baseValue: 5
+    growthValue: 15
+    progressionType: 0
+  buildTimes:
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  buildTimeStats:
+    baseValue: 0.5
+    growthValue: 0
+    progressionType: 0
+  attackPowers:
+  - 6
+  - 6
+  - 11
+  - 11
+  - 16
+  - 16
+  - 21
+  - 21
+  - 26
+  - 26
+  - 31
+  - 31
+  - 36
+  - 36
+  - 41
+  - 41
+  - 46
+  - 46
+  - 51
+  - 51
+  attackPowerStats:
+    baseValue: 6
+    growthValue: 5
+    progressionType: 2
+  attackRates:
+  - 2
+  - 1.95
+  - 1.9000001
+  - 1.8500001
+  - 1.8000002
+  - 1.7500002
+  - 1.7000003
+  - 1.6500003
+  - 1.6000004
+  - 1.5500004
+  - 1.5000005
+  - 1.4500005
+  - 1.4000006
+  - 1.3500006
+  - 1.3000007
+  - 1.2500007
+  - 1.2000008
+  - 1.1500008
+  - 1.1000009
+  - 1.0500009
+  attackRateStats:
+    baseValue: 2
+    growthValue: 0.05
+    progressionType: 0
+  minAttackRate: 0.1
+  attackRanges:
+  - 7
+  - 7.125
+  - 7.375
+  - 7.5
+  - 7.75
+  - 7.875
+  - 8.125
+  - 8.25
+  - 8.5
+  - 8.625
+  - 8.875
+  - 9
+  - 9.25
+  - 9.375
+  - 9.625
+  - 9.75
+  - 10
+  - 10.125
+  - 10.375
+  - 10.5
+  attackRangeStats:
+    baseValue: 7
+    growthValue: 0.25
+    progressionType: 1
+  minionHealths:
+  - 30
+  - 30
+  - 50
+  - 50
+  - 70
+  - 70
+  - 90
+  - 90
+  - 110
+  - 110
+  - 130
+  - 130
+  - 150
+  - 150
+  - 170
+  - 170
+  - 190
+  - 190
+  - 210
+  - 210
+  minionHealthStats:
+    baseValue: 90
+    growthValue: 20
+    progressionType: 2
+  goldGenAmounts:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  goldGenAmountStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  spellDurations:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  spellDurationStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  spell: 0

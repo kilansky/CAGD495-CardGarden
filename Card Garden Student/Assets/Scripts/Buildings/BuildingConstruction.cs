@@ -8,9 +8,11 @@ public class BuildingConstruction : MonoBehaviour
     public TextMeshProUGUI buildTimeText;
 
     private Card cardData;
+    private int level;
     private float timeRemaining;
 
     public void SetCard(Card _cardData) {cardData = _cardData;}
+    public void SetLevel(int _level) { level = _level; }
 
     void Start()
     {
@@ -20,9 +22,9 @@ public class BuildingConstruction : MonoBehaviour
     private IEnumerator BuildBuilding()
     {
         //Wait for timeToBuild, check again each half second
-        for (float i = 0; i < cardData.timeToBuild; i+=0.5f)
+        for (float i = 0; i < cardData.buildTimes[level]; i+=0.5f)
         {
-            timeRemaining = cardData.timeToBuild - i;
+            timeRemaining = cardData.buildTimes[level] - i;
             if(timeRemaining % 1 == 0)
                 buildTimeText.text = timeRemaining.ToString();
 
@@ -33,6 +35,7 @@ public class BuildingConstruction : MonoBehaviour
         //Spawn the building and destroy self
         GameObject newBuilding = Instantiate(cardData.thingToSpawn, transform.position, transform.rotation);
         newBuilding.GetComponent<Building>().cardData = cardData;
+        newBuilding.GetComponent<LevelUp>().baseLevel = level;
         Destroy(gameObject);
     }
 }

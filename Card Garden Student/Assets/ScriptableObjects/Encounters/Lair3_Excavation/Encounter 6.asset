@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268d290fe117bfb4e94caf18ab32cd8d, type: 3}
+  m_Name: Encounter 6
+  m_EditorClassIdentifier: 
+  Waves:
+  - {fileID: 11400000, guid: 8314a2e38dcc5a94f82d03dea20163b7, type: 2}
+  - {fileID: 11400000, guid: 1a9fa05c32e86b140a495458961886c2, type: 2}
+  - {fileID: 11400000, guid: 4f113fb713c52b14697ef68f1917a879, type: 2}
+  - {fileID: 11400000, guid: ded056378da36614ca1097a97fd83f9f, type: 2}
+  - {fileID: 11400000, guid: da6f4e02d8179d245a3e561797633145, type: 2}
+  - {fileID: 11400000, guid: 96fdc74f5a08c5a4b8aa0a7c3f973780, type: 2}
+  - {fileID: 11400000, guid: ded056378da36614ca1097a97fd83f9f, type: 2}
+  - {fileID: 11400000, guid: 4a142fbbaa1a4374d8a6ce4a16b32d90, type: 2}
+  - {fileID: 11400000, guid: ded056378da36614ca1097a97fd83f9f, type: 2}
+  - {fileID: 11400000, guid: e2173cbfb0913dd45b42289ce88ee8ef, type: 2}

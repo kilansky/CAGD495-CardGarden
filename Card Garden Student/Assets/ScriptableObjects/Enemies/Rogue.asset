@@ -1,0 +1,194 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee8a92cf062a13478157b30df29d3d0, type: 3}
+  m_Name: Rogue
+  m_EditorClassIdentifier: 
+  seasonType: {fileID: 11400000, guid: cbe072f7a3c5ec84c960be82e8a1c32f, type: 2}
+  enemyClass: 2
+  projectilePrefab: {fileID: 672357267275160715, guid: fe15401d35268f34a9ced613057df1dd,
+    type: 3}
+  movementSpeeds:
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  movementSpeedStats:
+    baseValue: 5
+    growthValue: 0
+    progressionType: 0
+  maxHealths:
+  - 18
+  - 18
+  - 38
+  - 38
+  - 58
+  - 58
+  - 78
+  - 78
+  - 98
+  - 98
+  - 118
+  - 118
+  - 138
+  - 138
+  - 158
+  - 158
+  - 178
+  - 178
+  - 198
+  - 198
+  maxHealthStats:
+    baseValue: 18
+    growthValue: 20
+    progressionType: 2
+  attackPowers:
+  - 6
+  - 11
+  - 16
+  - 21
+  - 26
+  - 31
+  - 36
+  - 41
+  - 46
+  - 51
+  - 56
+  - 61
+  - 66
+  - 71
+  - 76
+  - 81
+  - 86
+  - 91
+  - 96
+  - 101
+  attackPowerStats:
+    baseValue: 6
+    growthValue: 5
+    progressionType: 0
+  attackRanges:
+  - 4
+  - 4.25
+  - 4.75
+  - 5
+  - 5.5
+  - 5.75
+  - 6.25
+  - 6.5
+  - 7
+  - 7.25
+  - 7.75
+  - 8
+  - 8.5
+  - 8.75
+  - 9.25
+  - 9.5
+  - 10
+  - 10.25
+  - 10.75
+  - 11
+  attackRangeStats:
+    baseValue: 1
+    growthValue: 0.5
+    progressionType: 1
+  attackRates:
+  - 0.6
+  - 0.55
+  - 0.45000002
+  - 0.4
+  - 0.3
+  - 0.25
+  - 0.15
+  - 0.10000001
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  attackRateStats:
+    baseValue: 0.6
+    growthValue: 0.1
+    progressionType: 1
+  minAttackRate: 0.1
+  expValues:
+  - 20
+  - 25
+  - 30
+  - 35
+  - 40
+  - 45
+  - 50
+  - 55
+  - 60
+  - 65
+  - 70
+  - 75
+  - 80
+  - 85
+  - 90
+  - 95
+  - 100
+  - 105
+  - 110
+  - 115
+  expValueStats:
+    baseValue: 20
+    growthValue: 5
+    progressionType: 0
+  goldDropped:
+  - 20
+  - 20
+  - 25
+  - 25
+  - 30
+  - 30
+  - 35
+  - 35
+  - 40
+  - 40
+  - 45
+  - 45
+  - 50
+  - 50
+  - 55
+  - 55
+  - 60
+  - 60
+  - 65
+  - 65
+  goldDroppedStats:
+    baseValue: 20
+    growthValue: 5
+    progressionType: 2

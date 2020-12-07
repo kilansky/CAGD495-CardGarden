@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268d290fe117bfb4e94caf18ab32cd8d, type: 3}
+  m_Name: Lair2_Encounter6
+  m_EditorClassIdentifier: 
+  Waves:
+  - {fileID: 11400000, guid: 12e61d9bab443c041ba24aa104f09e74, type: 2}
+  - {fileID: 11400000, guid: 5c99fc309367f8944a17b8e3fa642d60, type: 2}
+  - {fileID: 11400000, guid: 5e3133b0e89c8964e85ba1c6866fd9e7, type: 2}
+  - {fileID: 11400000, guid: 8ffeebe3b510e1d40a76b5626b402733, type: 2}
+  - {fileID: 11400000, guid: eeaf5d43ae4ac4b46aa587ada80c9263, type: 2}
+  - {fileID: 11400000, guid: 29117eed78719394392cbc5033662be0, type: 2}
+  - {fileID: 11400000, guid: 99cb746b7cef004469ed9cbaef9b0d64, type: 2}
+  - {fileID: 11400000, guid: eeaf5d43ae4ac4b46aa587ada80c9263, type: 2}
+  - {fileID: 11400000, guid: cd89f44554149734dbd095e0747795d9, type: 2}
+  - {fileID: 11400000, guid: 6268863c8bb07484ea24667559373a55, type: 2}
+  - {fileID: 11400000, guid: 2aad7b66cbb420c48b7091b1967890b9, type: 2}

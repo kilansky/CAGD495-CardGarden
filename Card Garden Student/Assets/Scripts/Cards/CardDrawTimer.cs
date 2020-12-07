@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class CardDrawTimer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
     private float timeToDraw;
     private float elapsedTime = 0;
+    public Image drawTimer;
 
     void Start()
     {
@@ -36,5 +38,6 @@ public class CardDrawTimer : MonoBehaviour
         {
             timerText.text = Mathf.Ceil(timeToDraw - elapsedTime).ToString("0");
         }
+        drawTimer.fillAmount = elapsedTime / timeToDraw;
     }
 }

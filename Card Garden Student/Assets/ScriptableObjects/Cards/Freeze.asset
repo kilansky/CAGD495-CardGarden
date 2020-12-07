@@ -1,0 +1,227 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62e5bbc13b890e44a25f906f2fb1c15, type: 3}
+  m_Name: Freeze
+  m_EditorClassIdentifier: 
+  cardType: 2
+  seasonType: {fileID: 11400000, guid: 72fb94292e5d4924ea909da9d91f9755, type: 2}
+  buildingSubtype: 0
+  minionSubtype: 0
+  spellSubtype: 1
+  thingToSpawn: {fileID: 7825786250730995315, guid: 04a69532d20b65f459d9a38ff87f2956,
+    type: 3}
+  thingInProgress: {fileID: 0}
+  name: Freeze!
+  description: Prevent foes from moving and attacking.
+  artwork: {fileID: 21300000, guid: 720c9b5eaa655dc4994d9f4836249c3c, type: 3}
+  costs:
+  - 30
+  - 45
+  - 60
+  - 75
+  - 90
+  - 105
+  - 120
+  - 135
+  - 150
+  - 165
+  - 180
+  - 195
+  - 210
+  - 225
+  - 240
+  - 255
+  - 270
+  - 285
+  - 300
+  - 315
+  costStats:
+    baseValue: 30
+    growthValue: 15
+    progressionType: 0
+  buildTimes:
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  buildTimeStats:
+    baseValue: 0.25
+    growthValue: 0
+    progressionType: 0
+  attackPowers:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  attackPowerStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  attackRates:
+  - 6
+  - 5
+  - 4
+  - 3
+  - 2
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  attackRateStats:
+    baseValue: 6
+    growthValue: 1
+    progressionType: 0
+  minAttackRate: 1
+  attackRanges:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  attackRangeStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  minionHealths:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  minionHealthStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  goldGenAmounts:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  goldGenAmountStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  spellDurations:
+  - 1
+  - 1
+  - 2
+  - 2
+  - 3
+  - 3
+  - 4
+  - 4
+  - 5
+  - 5
+  - 6
+  - 6
+  - 7
+  - 7
+  - 8
+  - 8
+  - 9
+  - 9
+  - 10
+  - 10
+  spellDurationStats:
+    baseValue: 5
+    growthValue: 1
+    progressionType: 2
+  spell: 0

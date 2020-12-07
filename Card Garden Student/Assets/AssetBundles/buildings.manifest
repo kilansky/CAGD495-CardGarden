@@ -1,0 +1,99 @@
+ManifestFileVersion: 0
+CRC: 3166303877
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c866c2ae84f6d97e4697857b32d645fd
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 68b0a48b289542581dbeeedbcf593a7a
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 79246ba1fd24f9044b966a47083cab20, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c80c85b179e71d84c907b53461fa26a3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8b774df20b31ec34d85bd76e77df37c8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: bd35b25348f479d488cc84cf47c3d9b9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: bfbf57a5af505a2408f092f2c1292e38, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c21f190792d11e9429050bfc86f66c00, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e876f1976f95b87428c4e1532470da3a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 75f4f55895c5e3d4aaed008279fdb8bc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b81202b973f7f7645b6f45b90553ca7b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 529afee921ceecf4b940b8c37d1a8f25, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5d6d0d9adf33eb94c9612b16761bdd79, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 32bb510b486c388449378fa24fe29431, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 513d6e0b605816641b0279361657997e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b62e5bbc13b890e44a25f906f2fb1c15, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/Buildings/Obeya.prefab
+- Assets/Prefabs/Buildings/Apiary.prefab
+- Assets/Prefabs/Buildings/StoneTower.prefab
+- Assets/Prefabs/Buildings/ArrowTower.prefab
+- Assets/Prefabs/Buildings/HoneyPot.prefab
+- Assets/Prefabs/Buildings/Blacksmith.prefab
+Dependencies: []

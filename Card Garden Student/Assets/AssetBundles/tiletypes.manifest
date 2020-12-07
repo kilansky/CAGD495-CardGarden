@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3288508054
+CRC: 1474720376
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 72f4a1d90e9d023d101076b023435498
+    Hash: d1c518a6aa3ef9cc8004c8daa08f2ba6
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 31cb103f9f9b228e6429cfb0bd9a617b
+    Hash: 229c201485c9ed3e3fbc75790bf8dadc
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -28,18 +28,10 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: c80c85b179e71d84c907b53461fa26a3, type: 3}
+  Script: {fileID: 11500000, guid: 91501cdfc60969448a057e5d886b70f3, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 6522d1c331d04774eaee2b35a9a8bfd6, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 93edcae6423c3aa42880e7d491ce88e1, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: e9db4ebaaebe25b438244d9d26c4b76b, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 91501cdfc60969448a057e5d886b70f3, type: 3}
 - Class: 115
-  Script: {instanceID: 0}
-- Class: 195
   Script: {instanceID: 0}
 Assets:
 - Assets/Prefabs/GridTiles/LaneTile.prefab

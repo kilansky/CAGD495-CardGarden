@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268d290fe117bfb4e94caf18ab32cd8d, type: 3}
+  m_Name: Lair1_Encounter5
+  m_EditorClassIdentifier: 
+  Waves:
+  - {fileID: 11400000, guid: fb8c638730e00bf4d861eac1a529f330, type: 2}
+  - {fileID: 11400000, guid: 165ada9c42b40944d9c245f39846b380, type: 2}
+  - {fileID: 11400000, guid: febaebe69110d1d4ba0d6de50f2c5007, type: 2}
+  - {fileID: 11400000, guid: a86a67cbe8ad2494486463071ff11138, type: 2}
+  - {fileID: 11400000, guid: 55653560dce9ccd478a929a61369dee2, type: 2}
+  - {fileID: 11400000, guid: dd4e9d4fc8ecd2e4a890d1c207674dca, type: 2}
+  - {fileID: 11400000, guid: 6441de2888cd99c48b93914d0e50911f, type: 2}
+  - {fileID: 11400000, guid: d4ea98845419a444a96ac62ea5746517, type: 2}

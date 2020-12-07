@@ -1,0 +1,228 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62e5bbc13b890e44a25f906f2fb1c15, type: 3}
+  m_Name: _debug_gardener
+  m_EditorClassIdentifier: 
+  cardType: 1
+  seasonType: {fileID: 11400000, guid: fcf0d38344d979042932f94047d05eca, type: 2}
+  buildingSubtype: 2
+  minionSubtype: 0
+  spellSubtype: 0
+  thingToSpawn: {fileID: 5547215595040076557, guid: 1e9651ead295db744a012aec7fb340f5,
+    type: 3}
+  thingInProgress: {fileID: 5547215595040076557, guid: dcb06b9ee7b770a4f870dea810e8cf97,
+    type: 3}
+  name: <DEBUG>
+  description: debug gardener
+  artwork: {fileID: 21300000, guid: e28594755fe5d584abac3f76cff1d0cb, type: 3}
+  costs:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  costStats:
+    baseValue: 1
+    growthValue: 0
+    progressionType: 0
+  buildTimes:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  buildTimeStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  attackPowers:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  attackPowerStats:
+    baseValue: 5
+    growthValue: 0
+    progressionType: 0
+  attackRates:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  attackRateStats:
+    baseValue: 1
+    growthValue: 0
+    progressionType: 0
+  minAttackRate: 0.1
+  attackRanges:
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  attackRangeStats:
+    baseValue: 10
+    growthValue: 0
+    progressionType: 0
+  minionHealths:
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  - 100000
+  minionHealthStats:
+    baseValue: 100000
+    growthValue: 0
+    progressionType: 0
+  goldGenAmounts:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  goldGenAmountStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  spellDurations:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  spellDurationStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  spell: 0

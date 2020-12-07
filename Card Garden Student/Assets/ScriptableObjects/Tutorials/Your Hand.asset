@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34df0590d855c0d4d82317100f55bb12, type: 3}
+  m_Name: Your Hand
+  m_EditorClassIdentifier: 
+  Title: Your Hand
+  tutorialText: Your hand consists of up to five cards. You can click to select a
+    card and then play it or discard it. To play a card, drag it to the center and
+    then select a place on the board to play that card. Playing a card costs gold
+    and some cards can only be placed in certain locations.
+  icon: {fileID: 21300000, guid: ea76bb89871906d4bbec2e3f19e8695b, type: 3}
+  hasBeenShown: 0
+  tutorialIndex: 0

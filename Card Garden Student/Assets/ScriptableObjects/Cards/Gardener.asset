@@ -13,20 +13,215 @@ MonoBehaviour:
   m_Name: Gardener
   m_EditorClassIdentifier: 
   cardType: 1
+  seasonType: {fileID: 11400000, guid: 439ca5b862f029542aad1875d8f23ee7, type: 2}
   buildingSubtype: 0
+  spellSubtype: 0
   thingToSpawn: {fileID: 5547215595040076557, guid: 1e9651ead295db744a012aec7fb340f5,
     type: 3}
   thingInProgress: {fileID: 5547215595040076557, guid: dcb06b9ee7b770a4f870dea810e8cf97,
     type: 3}
   name: Gardner
-  description: Sittin' restless under the moonlight, I know I'm getting ready to
-    kill. They say we're going in with the day light; I don't want to but I will.
-  artwork: {fileID: 21300000, guid: e28594755fe5d584abac3f76cff1d0cb, type: 3}
-  cost: 35
-  timeToBuild: 0.5
-  attackPower: 10
-  attackRate: 1
-  attackRadius: 2
-  minionHealth: 24
-  minionArmor: 2
-  goldGenRate: 0
+  description: Summon a gardener on the pathway to fend off your foes.
+  artwork: {fileID: 21300000, guid: 65129e29a6e3d6c42806b6682a77f1ac, type: 3}
+  costs:
+  - 35
+  - 50
+  - 65
+  - 80
+  - 95
+  - 110
+  - 125
+  - 140
+  - 155
+  - 170
+  - 185
+  - 200
+  - 215
+  - 230
+  - 245
+  - 260
+  - 275
+  - 290
+  - 305
+  - 320
+  costStats:
+    baseValue: 35
+    growthValue: 15
+    progressionType: 0
+  buildTimes:
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  buildTimeStats:
+    baseValue: 0.5
+    growthValue: 0
+    progressionType: 0
+  attackPowers:
+  - 10
+  - 15
+  - 20
+  - 25
+  - 30
+  - 35
+  - 40
+  - 45
+  - 50
+  - 55
+  - 60
+  - 65
+  - 70
+  - 75
+  - 80
+  - 85
+  - 90
+  - 95
+  - 100
+  - 105
+  attackPowerStats:
+    baseValue: 10
+    growthValue: 5
+    progressionType: 0
+  attackRates:
+  - 1
+  - 0.95
+  - 0.9
+  - 0.84999996
+  - 0.79999995
+  - 0.74999994
+  - 0.6999999
+  - 0.6499999
+  - 0.5999999
+  - 0.5499999
+  - 0.49999988
+  - 0.44999987
+  - 0.39999986
+  - 0.34999985
+  - 0.29999983
+  - 0.24999984
+  - 0.19999984
+  - 0.14999984
+  - 0.1
+  - 0.1
+  attackRateStats:
+    baseValue: 1
+    growthValue: 0.05
+    progressionType: 0
+  minAttackRate: 0.1
+  attackRanges:
+  - 4.25
+  - 4.25
+  - 4.5
+  - 4.5
+  - 4.75
+  - 4.75
+  - 5
+  - 5
+  - 5.25
+  - 5.25
+  - 5.5
+  - 5.5
+  - 5.75
+  - 5.75
+  - 6
+  - 6
+  - 6.25
+  - 6.25
+  - 6.5
+  - 6.5
+  attackRangeStats:
+    baseValue: 4.25
+    growthValue: 1
+    progressionType: 2
+  minionHealths:
+  - 10
+  - 30
+  - 50
+  - 70
+  - 90
+  - 110
+  - 130
+  - 150
+  - 170
+  - 190
+  - 210
+  - 230
+  - 250
+  - 270
+  - 290
+  - 310
+  - 330
+  - 350
+  - 370
+  - 390
+  minionHealthStats:
+    baseValue: 10
+    growthValue: 20
+    progressionType: 0
+  goldGenAmounts:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  goldGenAmountStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  spellDurations:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  spellDurationStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  spell: 0

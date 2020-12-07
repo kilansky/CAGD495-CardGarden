@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de0b03d86a41e69479715f125caa0e14, type: 3}
+  m_Name: 2.7
+  m_EditorClassIdentifier: 
+  enemiesToSpawn:
+  - {fileID: 2210756440170810332, guid: a5b441442def4d7439638120149c99b9, type: 3}
+  - {fileID: 2210756440170810332, guid: a5b441442def4d7439638120149c99b9, type: 3}
+  - {fileID: 2210756440170810332, guid: a5b441442def4d7439638120149c99b9, type: 3}
+  - {fileID: 2210756440170810332, guid: a5b441442def4d7439638120149c99b9, type: 3}
+  - {fileID: 2210756440170810332, guid: a5b441442def4d7439638120149c99b9, type: 3}
+  pathIndices: 0000000000000000000000000000000000000000
+  startLevels: 0100000001000000010000000100000001000000
+  timeBetweenSpawns: 4

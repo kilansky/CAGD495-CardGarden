@@ -1,7 +1,19 @@
 ManifestFileVersion: 0
-CRC: 1199916550
+CRC: 3224005830
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: tiletypes
+      Dependencies: {}
+    Info_1:
+      Name: level1tiles
+      Dependencies: {}
+    Info_2:
+      Name: level2tiles
+      Dependencies: {}
+    Info_3:
+      Name: savebutton
+      Dependencies: {}
+    Info_4:
+      Name: buildings
       Dependencies: {}

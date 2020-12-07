@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268d290fe117bfb4e94caf18ab32cd8d, type: 3}
+  m_Name: Lair2_Encounter2
+  m_EditorClassIdentifier: 
+  Waves:
+  - {fileID: 11400000, guid: 12e61d9bab443c041ba24aa104f09e74, type: 2}
+  - {fileID: 11400000, guid: d6e918a9b10bdd048b282f259370fa3c, type: 2}
+  - {fileID: 11400000, guid: da169955048131443939489cd2e77512, type: 2}
+  - {fileID: 11400000, guid: c5fc4401295653448953d4debb9cb927, type: 2}

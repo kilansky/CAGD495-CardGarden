@@ -12,18 +12,215 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62e5bbc13b890e44a25f906f2fb1c15, type: 3}
   m_Name: DeusExMachina
   m_EditorClassIdentifier: 
-  cardType: 0
+  cardType: 2
+  seasonType: {fileID: 11400000, guid: fcf0d38344d979042932f94047d05eca, type: 2}
   buildingSubtype: 0
-  thingToSpawn: {fileID: 0}
-  buildingInProgress: {fileID: 0}
-  name: 
-  description: 
-  artwork: {fileID: 0}
-  cost: 0
-  timeToBuild: 0
-  attackPower: 0
-  attackRate: 0
-  attackRadius: 0
-  minionHealth: 0
-  minionArmor: 0
-  goldGenPerSec: 0
+  spellSubtype: 2
+  thingToSpawn: {fileID: 41728489653240403, guid: bc800ee62f2d9ce41ae45c9e062447bb,
+    type: 3}
+  thingInProgress: {fileID: 0}
+  name: Deus Ex Machina
+  description: Call down the thunder on all of your foes!
+  artwork: {fileID: 21300000, guid: 55207457bf88c404dbdff9e5fe8aecaf, type: 3}
+  costs:
+  - 75
+  - 90
+  - 105
+  - 120
+  - 135
+  - 150
+  - 165
+  - 180
+  - 195
+  - 210
+  - 225
+  - 240
+  - 255
+  - 270
+  - 285
+  - 300
+  - 315
+  - 330
+  - 345
+  - 360
+  costStats:
+    baseValue: 75
+    growthValue: 15
+    progressionType: 0
+  buildTimes:
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  buildTimeStats:
+    baseValue: 0.25
+    growthValue: 0
+    progressionType: 0
+  attackPowers:
+  - 99
+  - 104
+  - 109
+  - 114
+  - 119
+  - 124
+  - 129
+  - 134
+  - 139
+  - 144
+  - 149
+  - 154
+  - 159
+  - 164
+  - 169
+  - 174
+  - 179
+  - 184
+  - 189
+  - 194
+  attackPowerStats:
+    baseValue: 99
+    growthValue: 5
+    progressionType: 0
+  attackRates:
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  attackRateStats:
+    baseValue: 0.1
+    growthValue: 0
+    progressionType: 0
+  minAttackRate: 0
+  attackRanges:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  attackRangeStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  minionHealths:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  minionHealthStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  goldGenAmounts:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  goldGenAmountStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  spellDurations:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  spellDurationStats:
+    baseValue: 0
+    growthValue: 0
+    progressionType: 0
+  spell: 2

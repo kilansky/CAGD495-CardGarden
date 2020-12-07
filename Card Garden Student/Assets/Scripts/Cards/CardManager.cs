@@ -9,6 +9,7 @@ public class ObjectReferences
 {
     public GameObject emptyCard;
     public Transform handZone;
+    public Transform displayZone;
     public Button drawButton;
     public Button discardButton;
     public Transform deckHolder;
@@ -22,6 +23,7 @@ public class ObjectReferences
 public class DeckQuantity
 {
     public Card cardType;
+    [Range(1,20)]public int cardLevel;
     public int amtInDeck;
 }
 
@@ -38,12 +40,13 @@ public class CardManager : SingletonPattern<CardManager>
     public bool drawHandOnStart;
     public DeckQuantity[] cards;
 
-    [HideInInspector]
+    //[HideInInspector]
     public List<GameObject> hand = new List<GameObject>();
 
     private int cardCost;
-    private List<GameObject> deck = new List<GameObject>();
-    private List<GameObject> discard = new List<GameObject>();
+    public List<GameObject> deck = new List<GameObject>();
+    public List<GameObject> discard = new List<GameObject>();
+    private List<GameObject> display = new List<GameObject>();
 
     private void Start()
     {
@@ -53,6 +56,8 @@ public class CardManager : SingletonPattern<CardManager>
 
         if(drawHandOnStart)
             DrawHand();
+
+        CardHandController.Instance.InitializeHandCurve();
     }
 
     private void Update()
@@ -78,17 +83,60 @@ public class CardManager : SingletonPattern<CardManager>
             {
                 //Assign new card values
                 GameObject newCard = Instantiate(objectReferences.emptyCard, Vector3.zero, Quaternion.identity, objectReferences.deckHolder);
-                newCard.GetComponent<DisplayCard>().card = deckCard.cardType;
+                newCard.GetComponent<DisplayCard>().card = deckCard.cardType; //Set card type
+                newCard.GetComponent<DisplayCard>().level = (deckCard.cardLevel - 1); //Set card level
+                //Debug.Log(newCard.GetComponent<DisplayCard>().card.name + " set to level " + newCard.GetComponent<DisplayCard>().level);
                 newCard.name = deckCard.cardType.name;
 
                 //Disable the new card and add it to the deck
                 newCard.SetActive(false);
                 deck.Add(newCard);
-
-                //Update the deck and discard pile quantities text
-                UpdateCardText();
             }
         }
+
+        //Update the deck and discard pile quantities text
+        UpdateCardText();
+    }
+
+    //Creates new cards earned between encounters, and displays them
+    public void GenerateNewCards(DeckQuantity[] newCards)
+    {
+        //Iterate for each type of card in the deck
+        foreach (DeckQuantity displayCard in newCards)
+        {
+            //Check the cardQuantity value and spawn that many of the corresponding card type
+            for (int i = 0; i < displayCard.amtInDeck; i++)
+            {
+                //Assign new card values
+                GameObject newCard = Instantiate(objectReferences.emptyCard, Vector3.zero, Quaternion.identity, objectReferences.deckHolder);
+                newCard.GetComponent<DisplayCard>().card = displayCard.cardType; //Set card type
+                newCard.GetComponent<DisplayCard>().level = (displayCard.cardLevel - 1); //Set card level
+                newCard.name = displayCard.cardType.name;
+
+                newCard.transform.SetParent(objectReferences.displayZone.transform);
+
+                //Add the new card into the display array
+                display.Add(newCard);            
+            }
+        }
+    }
+
+    //Clear the display of new cards and add them into the deck
+    public void AddNewCardsToDeck()
+    {
+        //Add all cards from the display to the deck and disable them
+        foreach (GameObject card in display)
+        {
+            deck.Add(card);
+            card.transform.SetParent(objectReferences.deckHolder.transform);
+            card.SetActive(false);
+        }
+
+        //Remove all cards from the display array
+        display.Clear();
+
+        //Update the deck and discard pile quantities text
+        UpdateCardText();
     }
 
     //Draws cards up to the max hand size
@@ -118,13 +166,18 @@ public class CardManager : SingletonPattern<CardManager>
 
             //Update the deck and discard pile quantities text
             UpdateCardText();
+
+            //Update the indexes of the cards in the hand
+            CardHandController.Instance.UpdateCardIndexes();
         }
         else
         {
+            /*
             if (deck.Count == 0)
                 Debug.Log("Failed to draw a card because there are no cards in the deck");
             else
                 Debug.Log("Failed to draw a card because the max hand size was reached");
+            */
         }
     }
 
@@ -149,8 +202,8 @@ public class CardManager : SingletonPattern<CardManager>
             //Update the deck and discard pile quantities text
             UpdateCardText();
         }
-        else
-            Debug.Log("Failed to discard a card because no card was selected");
+        //else
+            //Debug.Log("Failed to discard a card because no card was selected");
     }
 
     public void PurchaseCard()
@@ -158,6 +211,36 @@ public class CardManager : SingletonPattern<CardManager>
         PlayerStats.Instance.SubtractGold(cardCost);
         cardCost += costIncPerCard;
         DrawCard();
+    }
+
+    //Adds all card objects from the Hand and Discard back into the Deck and disable them
+    public void ResetDeck()
+    {
+        CardSelector.cardSelected = null; //Deselect the selected card
+        CardSelector.cardHovered = null; //Deselect the hovered card
+
+        //Move Hand cards into Deck, disable them, and reset the scaling
+        foreach (GameObject card in hand)
+        {
+            deck.Add(card);
+            card.SetActive(false);
+            card.GetComponent<CardSelector>().ResetTransform();
+            card.transform.SetParent(objectReferences.deckHolder);
+        }
+
+        //Move Discard cards into Deck, disable them, and reset the scaling
+        foreach (GameObject card in discard) 
+        {
+            deck.Add(card);
+            card.SetActive(false);
+            card.GetComponent<CardSelector>().ResetTransform();
+            card.transform.SetParent(objectReferences.deckHolder);
+        }
+
+        //Clear the Hand and Discard lists and update the UI
+        hand.Clear();
+        discard.Clear();
+        UpdateCardText();
     }
 
 

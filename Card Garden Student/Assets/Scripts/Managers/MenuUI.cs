@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class MenuUI : SingletonPattern<MenuUI>
 {
-    public bool isGameLevel;
-    [SerializeField]
-    private bool isPaused = false;
-    public GameObject[] UIPanel = null;
+    [Header("Game UI Screens")]
+    public GameObject[] gamePanels;
+
+    [SerializeField] private bool canPause = true;
+    [HideInInspector] public bool isPaused = false;
 
     private void Update()
     {
-        if (isGameLevel)
+        if (canPause)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -34,7 +36,6 @@ public class MenuUI : SingletonPattern<MenuUI>
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-
     }
 
     // Quits game, does not work in play mode in editor.
@@ -44,33 +45,36 @@ public class MenuUI : SingletonPattern<MenuUI>
         Application.Quit();
     }
 
-
     public void PauseGame()
     {
         OpenPanel(0);
         isPaused = true;
         Time.timeScale = 0f;
+        GameStateManager.Instance.ChangeState(GameState.GamePause);
     }
     public void UnpauseGame()
     {
         ClosePanel(0);
         isPaused = false;
         Time.timeScale = 1.0f;
+        GameStateManager.Instance.ChangeState(GameState.MidEncounter);
     }
 
     public void RestartScene()
     {
+        UnpauseGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     // Sets panels active and inactive. Technically works for anything just in case, as long as they're in the UIPanel array. Requries index.
-    public void OpenPanel(int panelNumber)
+    public void OpenPanel(int panelIndex)
     {
-        UIPanel[panelNumber].SetActive(true);
+        gamePanels[panelIndex].SetActive(true);
     }
-    public void ClosePanel(int panelNumber)
+
+    public void ClosePanel(int panelIndex)
     {
-        UIPanel[panelNumber].SetActive(false);
+        gamePanels[panelIndex].SetActive(false);
     }
 
     // Alternative just to try some things~
